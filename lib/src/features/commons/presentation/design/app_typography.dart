@@ -76,8 +76,8 @@ class AppTypography {
 
   late final heading3 = _style(
     fontFamily: ffHeading,
-    fontSize: 20,
-    lineHeight: 26,
+    fontSize: 24,
+    lineHeight: 28,
     fontWeight: FontWeight.w700,
   );
 

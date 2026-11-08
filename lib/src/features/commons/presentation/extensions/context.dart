@@ -34,6 +34,16 @@ extension BuildContextExtension on BuildContext {
 
   EdgeInsets get padding => MediaQuery.paddingOf(this);
 
+  static const _fallbackFontSize = 14.0;
+  static const _fallbackLineHeightFactor = 1.2;
+
+  double lineHeight(TextStyle? style, {int lines = 1}) {
+    final fontSize = style?.fontSize ?? _fallbackFontSize;
+    final height = style?.height ?? _fallbackLineHeightFactor;
+    return (MediaQuery.textScalerOf(this).scale(fontSize) * height * lines)
+        .ceilToDouble();
+  }
+
   bool canPop() => Navigator.of(this).canPop();
 
   void pop<T extends Object?>([T? result]) => Navigator.of(this).pop(result);

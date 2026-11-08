@@ -140,4 +140,84 @@ class AppLocalizationsMy extends AppLocalizations {
   @override
   String get lblOtpLocked =>
       'ကုဒ်မှားသည်မှာ များလွန်းပါသည်။ ကုဒ်အသစ်ပြန်ပို့ပြီး ထပ်စမ်းပါ';
+
+  @override
+  String lblShopsNearYou(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: 'သင့်အနီးတွင် J\'Donut ဆိုင် $count ဆိုင် ရှိပါသည်။ 😋',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get btnExploreNow => 'ယခုကြည့်ရှုမည်';
+
+  @override
+  String get btnOrderOnline => 'အွန်လိုင်းမှာယူရန်';
+
+  @override
+  String lblTierMember(String tier) {
+    return '$tier အဖွဲ့ဝင်';
+  }
+
+  @override
+  String lblPointsToNextTier(String points, String tier) {
+    return '$tier အဖွဲ့ဝင်ဖြစ်ရန် $points မှတ် လိုပါသေးသည်';
+  }
+
+  @override
+  String get lblTopTierReached => 'အမြင့်ဆုံးအဆင့်သို့ ရောက်ပါပြီ';
+
+  @override
+  String get lblTierBronze => 'ကြေးဝါ';
+
+  @override
+  String get lblTierSilver => 'ငွေ';
+
+  @override
+  String get lblTierGold => 'ရွှေ';
+
+  @override
+  String get lblNotifications => 'အသိပေးချက်များ';
+
+  @override
+  String get lblHome => 'ပင်မ';
+
+  @override
+  String get lblReward => 'ဆုလာဘ်';
+
+  @override
+  String get lblOrder => 'မှာယူရန်';
+
+  @override
+  String get lblWallet => 'ပိုက်ဆံအိတ်';
+
+  @override
+  String get lblSettings => 'ဆက်တင်များ';
+
+  @override
+  String get lblLogOut => 'ထွက်မည်';
+
+  @override
+  String get lblLogOutConfirmDescription =>
+      'ပြန်ဝင်ရန် ဖုန်းနံပါတ်ကို ထပ်မံအတည်ပြုရပါမည်။';
+
+  @override
+  String get lblRefresh => 'ပြန်ကြိုးစားရန်';
+
+  @override
+  String get lblRefreshFailed =>
+      'ပြန်လည်မွမ်းမံ၍ မရပါ။ နောက်ဆုံးရရှိထားသော မီနူးကို ပြသထားပါသည်။';
+
+  @override
+  String get lblOffline =>
+      'အင်တာနက်မရှိပါ။ သိမ်းထားသော အချက်အလက်ကို ပြသထားပါသည်။';
+
+  @override
+  String get lblSectionEmpty => 'ဤနေရာတွင် မရှိသေးပါ';
+
+  @override
+  String get lblSectionError => 'ဤအပိုင်းကို ဖွင့်၍မရပါ';
 }

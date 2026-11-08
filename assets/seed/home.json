@@ -1,0 +1,241 @@
+{
+  "shops": [
+    {
+      "id": "central-boulevard",
+      "name": "Central Boulevard J'Donut",
+      "title": "We are now at Central Boulevard",
+      "address": "Central Boulevard, Kabar Aye Pagoda Road, Yankin Township, Yangon.",
+      "imageUrl": "assets/seed/images/shops_central-boulevard.jpg",
+      "imageAspectRatio": 1.3333,
+      "promotion": {
+        "label": "New shop",
+        "position": "topCenter",
+        "kind": "new"
+      }
+    },
+    {
+      "id": "myaynigone",
+      "name": "Myaynigone J'Donut",
+      "title": "We are now at Myaynigone",
+      "address": "2972 Pyay Road, Sanchaung Township, Yangon.",
+      "imageUrl": "assets/seed/images/shops_myaynigone.jpg",
+      "imageAspectRatio": 1.3333,
+      "promotion": {
+        "label": "New shop",
+        "position": "topCenter",
+        "kind": "new"
+      }
+    },
+    {
+      "id": "junction-city",
+      "name": "Junction City J'Donut",
+      "title": "We are now at Junction City",
+      "address": "Bogyoke Aung San Road, Pabedan Township, Yangon.",
+      "imageUrl": "assets/seed/images/shops_junction-city.jpg",
+      "imageAspectRatio": 1.3333,
+      "promotion": {
+        "label": "New shop",
+        "position": "topCenter",
+        "kind": "new"
+      }
+    },
+    {
+      "id": "hledan",
+      "name": "Hledan J'Donut",
+      "title": "We are now at Hledan",
+      "address": "Hledan Centre, Insein Road, Kamayut Township, Yangon.",
+      "imageUrl": "assets/seed/images/shops_hledan.jpg",
+      "imageAspectRatio": 1.3333,
+      "promotion": {
+        "label": "New shop",
+        "position": "topCenter",
+        "kind": "new"
+      }
+    }
+  ],
+  "menuSections": [
+    {
+      "id": "seasonal-specials",
+      "title": "Seasonal specials",
+      "itemAspectRatio": 1.3333,
+      "items": [
+        {
+          "id": "mistletoe-romance-box",
+          "code": "JDBX000001",
+          "name": "Mistletoe Romance box",
+          "priceMmk": 18900,
+          "isNew": true,
+          "imageUrl": "assets/seed/images/seasonal_mistletoe-romance-box.jpg",
+          "imageAspectRatio": 1.3333,
+          "promotion": {
+            "label": "50% off",
+            "position": "bottomRight",
+            "kind": "discount"
+          }
+        },
+        {
+          "id": "christmas-mix-family-box",
+          "code": "JDBX000002",
+          "name": "Christmas Mix Family box",
+          "priceMmk": 24500,
+          "isNew": true,
+          "imageUrl": "assets/seed/images/seasonal_christmas-mix-family-box.jpg",
+          "imageAspectRatio": 1.3333,
+          "promotion": {
+            "label": "50% off",
+            "position": "bottomRight",
+            "kind": "discount"
+          }
+        },
+        {
+          "id": "classic-dozen-box",
+          "code": "JDBX000003",
+          "name": "Classic Dozen box",
+          "priceMmk": 21000,
+          "isNew": true,
+          "imageUrl": "assets/seed/images/seasonal_classic-dozen-box.jpg",
+          "imageAspectRatio": 1.3333,
+          "promotion": null
+        },
+        {
+          "id": "sweet-six-box",
+          "code": "JDBX000004",
+          "name": "Sweet Six box",
+          "priceMmk": 12500,
+          "isNew": true,
+          "imageUrl": "assets/seed/images/seasonal_sweet-six-box.jpg",
+          "imageAspectRatio": 1.3333,
+          "promotion": {
+            "label": "30% off",
+            "position": "bottomRight",
+            "kind": "discount"
+          }
+        }
+      ]
+    },
+    {
+      "id": "popular",
+      "title": "Popular 🔥",
+      "itemAspectRatio": 0.75,
+      "items": [
+        {
+          "id": 192,
+          "code": "JD000192",
+          "name": "Honey Lemon",
+          "priceMmk": 3600,
+          "isNew": false,
+          "imageUrl": "assets/seed/images/products_honey-lemon.png",
+          "imageAspectRatio": 1,
+          "promotion": {
+            "label": "New",
+            "position": "topRight",
+            "kind": "new"
+          }
+        },
+        {
+          "id": 31,
+          "code": "JD000031",
+          "name": "Signature Iced Coffee Extra Shot (Steel Tumbler)",
+          "priceMmk": 6500,
+          "isNew": false,
+          "imageUrl": "assets/seed/images/products_signature-iced-coffee-extra-shot-steel-tumbler.png",
+          "imageAspectRatio": 1,
+          "promotion": null
+        },
+        {
+          "id": 188,
+          "code": "JD000188",
+          "name": "Tiramella",
+          "priceMmk": 5200,
+          "isNew": false,
+          "imageUrl": "assets/seed/images/products_tiramella.png",
+          "imageAspectRatio": 1,
+          "promotion": {
+            "label": "New",
+            "position": "topRight",
+            "kind": "new"
+          }
+        },
+        {
+          "id": 42,
+          "code": "JD000042",
+          "name": "J'donut Honey Lemon Juice (Steel Tumbler)",
+          "priceMmk": 6200,
+          "isNew": false,
+          "imageUrl": "assets/seed/images/products_jdonut-honey-lemon-juice-steel-tumbler.png",
+          "imageAspectRatio": 1,
+          "promotion": null
+        },
+        {
+          "id": 186,
+          "code": "JD000186",
+          "name": "Matcha Panna",
+          "priceMmk": 6000,
+          "isNew": false,
+          "imageUrl": "assets/seed/images/products_matcha-panna.png",
+          "imageAspectRatio": 1,
+          "promotion": null
+        }
+      ]
+    },
+    {
+      "id": "order-again",
+      "title": "Order again",
+      "itemAspectRatio": 1,
+      "items": [
+        {
+          "id": 191,
+          "code": "JD000191",
+          "name": "Creamy Vanilla",
+          "priceMmk": 4000,
+          "isNew": false,
+          "imageUrl": "assets/seed/images/products_creamy-vanilla.png",
+          "imageAspectRatio": 1,
+          "promotion": {
+            "label": "20% off",
+            "position": "bottomRight",
+            "kind": "discount"
+          }
+        },
+        {
+          "id": 34,
+          "code": "JD000034",
+          "name": "J'donut Strawberry Juice (Steel Tumbler)",
+          "priceMmk": 5300,
+          "isNew": false,
+          "imageUrl": "assets/seed/images/products_jdonut-strawberry-juice-steel-tumbler.png",
+          "imageAspectRatio": 1,
+          "promotion": {
+            "label": "20% off",
+            "position": "bottomRight",
+            "kind": "discount"
+          }
+        },
+        {
+          "id": 89,
+          "code": "JD000089",
+          "name": "J'donuts Crispy Choco Crunch",
+          "priceMmk": 3800,
+          "isNew": false,
+          "imageUrl": "assets/seed/images/products_jdonuts-crispy-choco-crunch.png",
+          "imageAspectRatio": 1,
+          "promotion": null
+        },
+        {
+          "id": 196,
+          "code": "JD000196",
+          "name": "Custard Pistachio Bun",
+          "priceMmk": 6100,
+          "isNew": true,
+          "imageUrl": "assets/seed/images/products_custard-pistachio-bun.png",
+          "imageAspectRatio": 1,
+          "promotion": {
+            "label": "15% off",
+            "position": "topLeft",
+            "kind": "discount"
+          }
+        }
+      ]
+    }
+  ]
+}

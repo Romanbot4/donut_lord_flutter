@@ -59,5 +59,51 @@
     }
   },
   "lblOtpWrong": "That code isn't right. Try again",
-  "lblOtpLocked": "Too many wrong codes. Resend a new code to try again"
+  "lblOtpLocked": "Too many wrong codes. Resend a new code to try again",
+  "lblShopsNearYou": "{count, plural, =1{There is 1 J'Donut shop near you. 😋} other{There are {count} J'Donut shops near you. 😋}}",
+  "@lblShopsNearYou": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "btnExploreNow": "Explore now",
+  "btnOrderOnline": "Order online",
+  "lblTierMember": "{tier} member",
+  "@lblTierMember": {
+    "placeholders": {
+      "tier": {
+        "type": "String"
+      }
+    }
+  },
+  "lblPointsToNextTier": "{points} points left to become {tier} Member",
+  "@lblPointsToNextTier": {
+    "placeholders": {
+      "points": {
+        "type": "String"
+      },
+      "tier": {
+        "type": "String"
+      }
+    }
+  },
+  "lblTopTierReached": "You're at the top tier",
+  "lblTierBronze": "Bronze",
+  "lblTierSilver": "Silver",
+  "lblTierGold": "Gold",
+  "lblNotifications": "Notifications",
+  "lblHome": "Home",
+  "lblReward": "Reward",
+  "lblOrder": "Order",
+  "lblWallet": "Wallet",
+  "lblSettings": "Settings",
+  "lblLogOut": "Log out",
+  "lblLogOutConfirmDescription": "You'll need to verify your phone number again to sign back in.",
+  "lblRefresh": "Retry",
+  "lblRefreshFailed": "Couldn't refresh. Showing the last loaded menu.",
+  "lblOffline": "You're offline. Showing saved data.",
+  "lblSectionEmpty": "Nothing here yet",
+  "lblSectionError": "Couldn't load this section"
 }

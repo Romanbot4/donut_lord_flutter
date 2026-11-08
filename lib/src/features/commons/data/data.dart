@@ -1,6 +1,9 @@
+export 'contracts/api_envelope.dart';
+export 'database/app_database.dart';
 export 'data_sources/local/app_setting_local_storage.dart';
 export 'mappers/theme_mode_mapper.dart';
 export 'repositories/theme_repository.dart';
+export 'services/connectivity/connectivity_service.dart';
 export 'services/exception_mapper/exception_mapper.dart';
 export 'services/exception_mapper/helpers/dio_exception_extension.dart';
 export 'services/latency/minimum_duration.dart';

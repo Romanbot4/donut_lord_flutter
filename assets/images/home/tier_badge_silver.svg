@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="208" height="208" viewBox="-104 -104 208 208">
+  <defs>
+    <linearGradient id="silver-rim" x1="0" y1="0" x2="0.35" y2="1">
+      <stop offset="0" stop-color="#EEF0F2"/>
+      <stop offset="0.55" stop-color="#D5D9DE"/>
+      <stop offset="1" stop-color="#B9BEC6"/>
+    </linearGradient>
+    <clipPath id="silver-inner"><path d="M-12.12 -73Q0 -80 12.12 -73L57.16 -47Q69.28 -40 69.28 -26L69.28 26Q69.28 40 57.16 47L12.12 73Q0 80 -12.12 73L-57.16 47Q-69.28 40 -69.28 26L-69.28 -26Q-69.28 -40 -57.16 -47Z"/></clipPath>
+  </defs>
+  <path d="M-20.78 -88Q0 -100 20.78 -88L65.82 -62Q86.6 -50 86.6 -26L86.6 26Q86.6 50 65.82 62L20.78 88Q0 100 -20.78 88L-65.82 62Q-86.6 50 -86.6 26L-86.6 -26Q-86.6 -50 -65.82 -62Z" fill="#FFFFFF"/>
+  <path d="M-19.05 -85Q0 -96 19.05 -85L64.09 -59Q83.14 -48 83.14 -26L83.14 26Q83.14 48 64.09 59L19.05 85Q0 96 -19.05 85L-64.09 59Q-83.14 48 -83.14 26L-83.14 -26Q-83.14 -48 -64.09 -59Z" fill="url(#silver-rim)"/>
+  <path d="M-77 0V30" stroke="#FFFFFF" stroke-opacity="0.45" stroke-width="2.5" stroke-linecap="round"/>
+  <path d="M-12.12 -73Q0 -80 12.12 -73L57.16 -47Q69.28 -40 69.28 -26L69.28 26Q69.28 40 57.16 47L12.12 73Q0 80 -12.12 73L-57.16 47Q-69.28 40 -69.28 26L-69.28 -26Q-69.28 -40 -57.16 -47Z" fill="#F3F4F6"/>
+  <polygon clip-path="url(#silver-inner)" points="-120,-120 120,-120 120,-21 0,14 -120,-21" fill="#E6E8EB"/>
+  <polygon points="1,-58 6,-45.88 19.07,-44.87 9.08,-36.37 12.17,-23.63 1,-30.5 -10.17,-23.63 -7.08,-36.37 -17.07,-44.87 -4,-45.88" fill="#A3A8B0" stroke="#A3A8B0" stroke-width="5" stroke-linejoin="round"/>
+</svg>

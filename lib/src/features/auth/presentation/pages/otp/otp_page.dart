@@ -106,9 +106,8 @@ class _ResendCountdown extends StatelessWidget {
       onTap: context.read<OtpCubit>().resend,
       child: Text(
         strings.lblResentCounterResend,
-        style: style?.copyWith(
+        style: style?.semiBold.copyWith(
           color: context.theme.colorScheme.primary,
-          fontWeight: FontWeight.w600,
         ),
       ),
     );

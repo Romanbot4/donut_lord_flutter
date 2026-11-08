@@ -141,4 +141,84 @@ class AppLocalizationsEn extends AppLocalizations {
   @override
   String get lblOtpLocked =>
       'Too many wrong codes. Resend a new code to try again';
+
+  @override
+  String lblShopsNearYou(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: 'There are $count J\'Donut shops near you. 😋',
+      one: 'There is 1 J\'Donut shop near you. 😋',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get btnExploreNow => 'Explore now';
+
+  @override
+  String get btnOrderOnline => 'Order online';
+
+  @override
+  String lblTierMember(String tier) {
+    return '$tier member';
+  }
+
+  @override
+  String lblPointsToNextTier(String points, String tier) {
+    return '$points points left to become $tier Member';
+  }
+
+  @override
+  String get lblTopTierReached => 'You\'re at the top tier';
+
+  @override
+  String get lblTierBronze => 'Bronze';
+
+  @override
+  String get lblTierSilver => 'Silver';
+
+  @override
+  String get lblTierGold => 'Gold';
+
+  @override
+  String get lblNotifications => 'Notifications';
+
+  @override
+  String get lblHome => 'Home';
+
+  @override
+  String get lblReward => 'Reward';
+
+  @override
+  String get lblOrder => 'Order';
+
+  @override
+  String get lblWallet => 'Wallet';
+
+  @override
+  String get lblSettings => 'Settings';
+
+  @override
+  String get lblLogOut => 'Log out';
+
+  @override
+  String get lblLogOutConfirmDescription =>
+      'You\'ll need to verify your phone number again to sign back in.';
+
+  @override
+  String get lblRefresh => 'Retry';
+
+  @override
+  String get lblRefreshFailed =>
+      'Couldn\'t refresh. Showing the last loaded menu.';
+
+  @override
+  String get lblOffline => 'You\'re offline. Showing saved data.';
+
+  @override
+  String get lblSectionEmpty => 'Nothing here yet';
+
+  @override
+  String get lblSectionError => 'Couldn\'t load this section';
 }

@@ -9,6 +9,8 @@ abstract final class AppMotion {
 
   static const shake = Duration(milliseconds: 450);
 
+  static const shimmer = Duration(milliseconds: 1400);
+
   static const artworkSlideOffset = 0.25;
   static const contentSlideOffset = 0.3;
 

@@ -4,11 +4,12 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
 import 'package:injectable/injectable.dart';
-import 'package:jdonuts/flavors.dart';
 import 'package:jdonuts/src/di/di.dart';
 import 'package:jdonuts/src/features/auth/presentation/presentation.dart';
 import 'package:jdonuts/src/features/commons/domain/domain.dart';
 import 'package:jdonuts/src/features/commons/presentation/presentation.dart';
+import 'package:jdonuts/src/features/home/presentation/presentation.dart';
+import 'package:jdonuts/src/features/settings/presentation/presentation.dart';
 
 @Injectable(as: IAppRouter)
 final class AppRouter implements IAppRouter {
@@ -32,6 +33,26 @@ final class AppRouter implements IAppRouter {
 
   late final _sessionChanges = StreamListenable(_session.stream);
 
+  static const _rewardsPath = "/rewards";
+  static const _orderPath = "/order";
+  static const _walletPath = "/wallet";
+
+  static const _tabPaths = [
+    HomePage.routePath,
+    _rewardsPath,
+    _orderPath,
+    _walletPath,
+    SettingsPage.routePath,
+  ];
+
+  late final _selectedTabIndex = ValueNotifier<int>(0);
+
+  static GoRoute _tabRoute(String path, WidgetBuilder builder) => GoRoute(
+    path: path,
+    pageBuilder: (context, state) =>
+        NoTransitionPage(key: state.pageKey, child: builder(context)),
+  );
+
   void _goToInitialLocation(BuildContext context) =>
       context.go(_initialLocation.toString());
 
@@ -53,18 +74,43 @@ final class AppRouter implements IAppRouter {
       ShellRoute(
         navigatorKey: _navigationKeyProvider.shellRouteKey,
         builder: (context, state, child) {
+          final currentIndex = _tabPaths.indexOf(state.uri.path);
+          if (currentIndex != -1 &&
+              _selectedTabIndex.value != currentIndex) {
+            WidgetsBinding.instance.addPostFrameCallback((_) {
+              _selectedTabIndex.value = currentIndex;
+            });
+          }
+
           return PopScope(
             canPop: false,
             onPopInvokedWithResult: (_, _) => _handleIndexLayoutPop(context),
-            child: child,
+            child: IndexLayout(
+              indexListener: _selectedTabIndex,
+              showBottomNavigationBar: _tabPaths.contains(state.fullPath),
+              onTap: (index) => context.go(_tabPaths[index]),
+              child: child,
+            ),
           );
         },
         routes: [
-          GoRoute(
-            path: _initialLocation.path,
-            builder: (context, state) =>
-                Scaffold(body: Center(child: Text(F.title))),
+          _tabRoute(HomePage.routePath, (_) => const HomePage()),
+          _tabRoute(
+            _rewardsPath,
+            (context) =>
+                TabPlaceholderPage(title: context.localizations.lblReward),
           ),
+          _tabRoute(
+            _orderPath,
+            (context) =>
+                TabPlaceholderPage(title: context.localizations.lblOrder),
+          ),
+          _tabRoute(
+            _walletPath,
+            (context) =>
+                TabPlaceholderPage(title: context.localizations.lblWallet),
+          ),
+          _tabRoute(SettingsPage.routePath, (_) => const SettingsPage()),
         ],
       ),
     ],

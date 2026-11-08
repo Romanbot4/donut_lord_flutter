@@ -93,8 +93,7 @@ class _LogInLabel extends StatelessWidget {
         children: [
           TextSpan(
             text: strings.btnLogin,
-            style: style?.copyWith(
-              fontWeight: FontWeight.w600,
+            style: style?.semiBold.copyWith(
               color: context.theme.colorScheme.primary,
             ),
             recognizer: TapGestureRecognizer()..onTap = onTap,

@@ -3,6 +3,7 @@ export 'services/i18n/app_localizations_en.dart';
 export 'services/i18n/app_localizations_my.dart';
 export 'repositories/theme_repository.dart';
 export 'services/app_router.dart';
+export 'services/connectivity.dart';
 export 'services/local_storage.dart';
 export 'services/localization.dart';
 export 'services/navigation_key_provider.dart';

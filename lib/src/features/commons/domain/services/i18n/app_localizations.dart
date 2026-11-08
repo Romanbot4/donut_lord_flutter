@@ -331,6 +331,138 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Too many wrong codes. Resend a new code to try again'**
   String get lblOtpLocked;
+
+  /// No description provided for @lblShopsNearYou.
+  ///
+  /// In en, this message translates to:
+  /// **'{count, plural, =1{There is 1 J\'Donut shop near you. 😋} other{There are {count} J\'Donut shops near you. 😋}}'**
+  String lblShopsNearYou(int count);
+
+  /// No description provided for @btnExploreNow.
+  ///
+  /// In en, this message translates to:
+  /// **'Explore now'**
+  String get btnExploreNow;
+
+  /// No description provided for @btnOrderOnline.
+  ///
+  /// In en, this message translates to:
+  /// **'Order online'**
+  String get btnOrderOnline;
+
+  /// No description provided for @lblTierMember.
+  ///
+  /// In en, this message translates to:
+  /// **'{tier} member'**
+  String lblTierMember(String tier);
+
+  /// No description provided for @lblPointsToNextTier.
+  ///
+  /// In en, this message translates to:
+  /// **'{points} points left to become {tier} Member'**
+  String lblPointsToNextTier(String points, String tier);
+
+  /// No description provided for @lblTopTierReached.
+  ///
+  /// In en, this message translates to:
+  /// **'You\'re at the top tier'**
+  String get lblTopTierReached;
+
+  /// No description provided for @lblTierBronze.
+  ///
+  /// In en, this message translates to:
+  /// **'Bronze'**
+  String get lblTierBronze;
+
+  /// No description provided for @lblTierSilver.
+  ///
+  /// In en, this message translates to:
+  /// **'Silver'**
+  String get lblTierSilver;
+
+  /// No description provided for @lblTierGold.
+  ///
+  /// In en, this message translates to:
+  /// **'Gold'**
+  String get lblTierGold;
+
+  /// No description provided for @lblNotifications.
+  ///
+  /// In en, this message translates to:
+  /// **'Notifications'**
+  String get lblNotifications;
+
+  /// No description provided for @lblHome.
+  ///
+  /// In en, this message translates to:
+  /// **'Home'**
+  String get lblHome;
+
+  /// No description provided for @lblReward.
+  ///
+  /// In en, this message translates to:
+  /// **'Reward'**
+  String get lblReward;
+
+  /// No description provided for @lblOrder.
+  ///
+  /// In en, this message translates to:
+  /// **'Order'**
+  String get lblOrder;
+
+  /// No description provided for @lblWallet.
+  ///
+  /// In en, this message translates to:
+  /// **'Wallet'**
+  String get lblWallet;
+
+  /// No description provided for @lblSettings.
+  ///
+  /// In en, this message translates to:
+  /// **'Settings'**
+  String get lblSettings;
+
+  /// No description provided for @lblLogOut.
+  ///
+  /// In en, this message translates to:
+  /// **'Log out'**
+  String get lblLogOut;
+
+  /// No description provided for @lblLogOutConfirmDescription.
+  ///
+  /// In en, this message translates to:
+  /// **'You\'ll need to verify your phone number again to sign back in.'**
+  String get lblLogOutConfirmDescription;
+
+  /// No description provided for @lblRefresh.
+  ///
+  /// In en, this message translates to:
+  /// **'Retry'**
+  String get lblRefresh;
+
+  /// No description provided for @lblRefreshFailed.
+  ///
+  /// In en, this message translates to:
+  /// **'Couldn\'t refresh. Showing the last loaded menu.'**
+  String get lblRefreshFailed;
+
+  /// No description provided for @lblOffline.
+  ///
+  /// In en, this message translates to:
+  /// **'You\'re offline. Showing saved data.'**
+  String get lblOffline;
+
+  /// No description provided for @lblSectionEmpty.
+  ///
+  /// In en, this message translates to:
+  /// **'Nothing here yet'**
+  String get lblSectionEmpty;
+
+  /// No description provided for @lblSectionError.
+  ///
+  /// In en, this message translates to:
+  /// **'Couldn\'t load this section'**
+  String get lblSectionError;
 }
 
 class _AppLocalizationsDelegate

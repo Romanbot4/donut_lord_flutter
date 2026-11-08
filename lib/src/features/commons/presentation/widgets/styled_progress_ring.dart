@@ -14,7 +14,7 @@ class StyledProgressRing extends StatelessWidget {
   });
 
   static const _size = 40.0;
-  static const _stroke = 6.0;
+  static const _stroke = 8.0;
   static const _trackAlpha = 0.3;
 
   @override

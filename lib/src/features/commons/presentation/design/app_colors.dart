@@ -10,6 +10,10 @@ abstract final class AppColors {
 
   static const accentOrange = Color(0xFFFF7A21);
 
+  static const bronzeHeader = Color(0xFFFFEFE2);
+  static const silverHeader = Color(0xFFF5F6F8);
+  static const goldHeader = Color(0xFFFFF8E4);
+
   static const blue = Color(0xFF1692F9);
   static const green = Color(0xFF4CAF50);
   static const red = Color(0xFFEF4444);
