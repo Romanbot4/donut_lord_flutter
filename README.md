@@ -1,8 +1,9 @@
-# portfolio
+# jdonuts
 
 A Flutter starter app with the basics already wired up: flavors, dependency
 injection, networking, local storage, localization (English and Myanmar),
-routing and a light/dark theme. Build features on top of it instead of
+routing, a light/dark theme, and phone sign-in and registration with a
+session that survives relaunch. Build features on top of it instead of
 starting from `flutter create` every time.
 
 ## Requirements
@@ -22,7 +23,7 @@ flutter doctor
 
 ```sh
 git clone <repo-url>
-cd portfolio
+cd jdonuts
 
 flutter pub get
 flutter gen-l10n
@@ -44,10 +45,10 @@ dart run build_runner watch
 
 There are two flavors, and you always have to pick one:
 
-| Flavor | App name      | Bundle / application id      | API                           |
-| ------ | ------------- | ---------------------------- | ----------------------------- |
-| `uat`  | Romanbot4 UAT | `com.romanbot4.portfoliouat` | `NetworkConfig.stagingDomain` |
-| `prod` | Romanbot4     | `com.romanbot4.portfolio`    | `NetworkConfig.prodDomain`    |
+| Flavor | App name    | Bundle / application id    | API                           |
+| ------ | ----------- | -------------------------- | ----------------------------- |
+| `uat`  | JDonuts UAT | `com.romanbot4.jdonutsuat` | `NetworkConfig.stagingDomain` |
+| `prod` | JDonuts     | `com.romanbot4.jdonuts`    | `NetworkConfig.prodDomain`    |
 
 ```sh
 flutter run --flavor uat
@@ -63,6 +64,18 @@ flutter build ipa --flavor prod
 ```
 
 Both flavors can be installed on the same device side by side.
+
+### Auth backend
+
+Auth runs against the mock server by default (`NetworkConfig.stagingDomain`
+on `uat`). To run without any server, use the on-device fake:
+
+```sh
+flutter run --flavor uat --dart-define=AUTH_BACKEND=fake
+```
+
+The fake waits about a second per step and stores users on the device. Either
+way, the OTP code is **`123456`**.
 
 ## Project structure
 
@@ -81,19 +94,52 @@ lib/
     ├── di/                 get_it + injectable setup
     │   └── third_party_modules/   Providers for Dio, SharedPreferences, etc.
     └── features/
+        ├── auth/           Phone sign-in, registration and the session
+        │   ├── domain/     Entities, repository interfaces, use cases, validators
+        │   ├── data/       API client, AuthInterceptor, token store,
+        │   │               remote and fake repositories
+        │   └── presentation/
+        │       ├── bloc/        SessionCubit
+        │       ├── pages/       Onboarding, phone, OTP, name, date of birth, welcome
+        │       ├── widgets/     AuthStepLayout, phone field, terms text
+        │       └── resources/   AuthImages
         └── commons/        Shared across features
             ├── domain/     Interfaces, use cases
             ├── data/       Implementations
             └── presentation/
-                ├── design/      AppColors, AppTypography, AppTheme
+                ├── design/      AppColors, AppTypography, AppTheme,
+                │                AppInsets, AppSpacing, AppRadius, AppMotion
                 ├── extensions/  BuildContext extension like context.something
                 ├── router/      go_router based router
                 ├── services/    SnackShower
-                └── ui/          Snacks and other prompts
+                ├── ui/          Snacks and other prompts
+                └── widgets/     Styled* widgets: primary button, back button,
+                                 text field, progress ring, OTP field
 ```
 
 New features go in `lib/src/features/<feature>/`, following the same
 `domain / data / presentation` split as `commons`.
+
+## Authentication
+
+**Flow.** Register: onboarding > phone > OTP > name > date of birth > welcome > home
+
+**Validation** (pure domain functions in `auth/domain/validators`):
+
+- **Phone:** after +95, 09 Myanmar Phone Number Normalization
+- **OTP:** 6 digits using regex
+- **Name:** First name require. Last name is optional.
+- **Date of birth:** a real calendar date, not in the future, age 13 or older.
+
+**Session and logout.** The token is stored using secure storage and is cached in
+memory. Smart token refresh and replay using my reusable `AuthInterceptor`
+
+## State management
+
+I will use BLoC (specifically Cubit). States are explicit freezed classes, cubits
+can be tested without any widgets, and `SessionCubit`'s stream drives the
+router's redirect directly.
+Also I prefer BLoC over Riverpod due to loose couple integration with flutter's original Widgets :)
 
 ### Conventions
 
@@ -106,6 +152,12 @@ New features go in `lib/src/features/<feature>/`, following the same
   user-facing text.
 - **Colors and text styles** come from the theme (`context.theme`,
   `context.textTheme`). Use `AppColors` directly only when no theme role fits.
+- **App Design widgets** are named `StyledSomething` and live in
+  `commons/presentation/widgets`.
+- **Design Systems** are defined from `AppInsets` (padding), `AppSpacing` (gaps),
+  `AppRadius` and `AppMotion`. No magic numbers in widgets.
+- **Design Systems** are defined under
+  `commons/presentation/design` as simple abstract namespace classes.
 
 ## Localization
 
@@ -125,5 +177,9 @@ are listed in `to_translate.txt`.
 
 Fonts are bundled in `assets/fonts/`:
 
-- **Roboto** for Latin text
-- **Noto Sans Myanmar** for Myanmar text, picked automatically when the locale is `my`
+- **General Sans** for body and UI text
+- **Menco** for display, headings and large titles
+- **Noto Sans Myanmar** for all Myanmar text
+
+Auth screen images (donuts, patterns, social logos) are in
+`assets/images/auth/` and referenced through `AuthImages`.

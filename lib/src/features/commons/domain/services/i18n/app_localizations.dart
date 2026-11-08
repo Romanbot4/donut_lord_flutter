@@ -103,6 +103,234 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Press again to exit'**
   String get lblPressAgainToExit;
+
+  /// No description provided for @lblLogoutSuccess.
+  ///
+  /// In en, this message translates to:
+  /// **'Logout successful'**
+  String get lblLogoutSuccess;
+
+  /// No description provided for @lblSessionExpired.
+  ///
+  /// In en, this message translates to:
+  /// **'Your session expired — please sign in again.'**
+  String get lblSessionExpired;
+
+  /// No description provided for @btnContinue.
+  ///
+  /// In en, this message translates to:
+  /// **'Continue'**
+  String get btnContinue;
+
+  /// No description provided for @btnLetsExplore.
+  ///
+  /// In en, this message translates to:
+  /// **'Let\'s explore'**
+  String get btnLetsExplore;
+
+  /// No description provided for @btnLogin.
+  ///
+  /// In en, this message translates to:
+  /// **'Log In'**
+  String get btnLogin;
+
+  /// No description provided for @lblAgreementPart1.
+  ///
+  /// In en, this message translates to:
+  /// **'By continuing, you acknowledge that you have read and agree to our '**
+  String get lblAgreementPart1;
+
+  /// No description provided for @lblAgreementPart2.
+  ///
+  /// In en, this message translates to:
+  /// **'.'**
+  String get lblAgreementPart2;
+
+  /// No description provided for @lblAlreadyHaveAnAccount.
+  ///
+  /// In en, this message translates to:
+  /// **'Already have an account?'**
+  String get lblAlreadyHaveAnAccount;
+
+  /// No description provided for @lblAnd.
+  ///
+  /// In en, this message translates to:
+  /// **' and '**
+  String get lblAnd;
+
+  /// No description provided for @lblComingSoon.
+  ///
+  /// In en, this message translates to:
+  /// **'Coming soon'**
+  String get lblComingSoon;
+
+  /// No description provided for @lblDateOfBirthInFuture.
+  ///
+  /// In en, this message translates to:
+  /// **'Date of birth can\'t be in the future'**
+  String get lblDateOfBirthInFuture;
+
+  /// No description provided for @lblDateOfBirthInvalid.
+  ///
+  /// In en, this message translates to:
+  /// **'This date doesn\'t exist. Check the day, month and year'**
+  String get lblDateOfBirthInvalid;
+
+  /// No description provided for @lblDateOfBirthTooYoung.
+  ///
+  /// In en, this message translates to:
+  /// **'You must be at least {age} years old'**
+  String lblDateOfBirthTooYoung(int age);
+
+  /// No description provided for @lblDay.
+  ///
+  /// In en, this message translates to:
+  /// **'Day'**
+  String get lblDay;
+
+  /// No description provided for @lblEnterOtp.
+  ///
+  /// In en, this message translates to:
+  /// **'Verify your number'**
+  String get lblEnterOtp;
+
+  /// No description provided for @lblEnterPhone.
+  ///
+  /// In en, this message translates to:
+  /// **'Enter your phone number'**
+  String get lblEnterPhone;
+
+  /// No description provided for @lblFirstName.
+  ///
+  /// In en, this message translates to:
+  /// **'First Name'**
+  String get lblFirstName;
+
+  /// No description provided for @lblFirstNameRequired.
+  ///
+  /// In en, this message translates to:
+  /// **'Please enter your first name'**
+  String get lblFirstNameRequired;
+
+  /// No description provided for @lblLastName.
+  ///
+  /// In en, this message translates to:
+  /// **'Last Name'**
+  String get lblLastName;
+
+  /// No description provided for @lblNameInvalid.
+  ///
+  /// In en, this message translates to:
+  /// **'Use letters and spaces only, no numbers or symbols'**
+  String get lblNameInvalid;
+
+  /// No description provided for @lblNameTooLong.
+  ///
+  /// In en, this message translates to:
+  /// **'Use {max} characters or fewer'**
+  String lblNameTooLong(int max);
+
+  /// No description provided for @lblMonth.
+  ///
+  /// In en, this message translates to:
+  /// **'Month'**
+  String get lblMonth;
+
+  /// No description provided for @lblOtpSent.
+  ///
+  /// In en, this message translates to:
+  /// **'We\'ve sent 6 digit OTP to {phone}.'**
+  String lblOtpSent(Object phone);
+
+  /// No description provided for @lblPrivacyPolicy.
+  ///
+  /// In en, this message translates to:
+  /// **'Privacy Policy'**
+  String get lblPrivacyPolicy;
+
+  /// No description provided for @lblRoundFoodForEveryMood.
+  ///
+  /// In en, this message translates to:
+  /// **'Round food for\nevery mood'**
+  String get lblRoundFoodForEveryMood;
+
+  /// No description provided for @lblLetsGetStarted.
+  ///
+  /// In en, this message translates to:
+  /// **'Let\'s get started'**
+  String get lblLetsGetStarted;
+
+  /// No description provided for @lblTermsOfService.
+  ///
+  /// In en, this message translates to:
+  /// **'Terms of Service'**
+  String get lblTermsOfService;
+
+  /// No description provided for @lblWelcome.
+  ///
+  /// In en, this message translates to:
+  /// **'Welcome'**
+  String get lblWelcome;
+
+  /// No description provided for @lblWelcomeBackUser.
+  ///
+  /// In en, this message translates to:
+  /// **'Welcome back {user}'**
+  String lblWelcomeBackUser(Object user);
+
+  /// No description provided for @lblWelcomeToTheWorldOfJDonuts.
+  ///
+  /// In en, this message translates to:
+  /// **'Welcome to the world of J\'donuts'**
+  String get lblWelcomeToTheWorldOfJDonuts;
+
+  /// No description provided for @lblWhatsYourDateOfBirth.
+  ///
+  /// In en, this message translates to:
+  /// **'What\'s your date of birth?'**
+  String get lblWhatsYourDateOfBirth;
+
+  /// No description provided for @lblWhatsYourName.
+  ///
+  /// In en, this message translates to:
+  /// **'What\'s your name?'**
+  String get lblWhatsYourName;
+
+  /// No description provided for @lblYear.
+  ///
+  /// In en, this message translates to:
+  /// **'Year'**
+  String get lblYear;
+
+  /// No description provided for @lblEnterValidPhoneNumber.
+  ///
+  /// In en, this message translates to:
+  /// **'Enter a valid phone number'**
+  String get lblEnterValidPhoneNumber;
+
+  /// No description provided for @lblResentCounterResend.
+  ///
+  /// In en, this message translates to:
+  /// **'Resend code'**
+  String get lblResentCounterResend;
+
+  /// No description provided for @lblResendIn.
+  ///
+  /// In en, this message translates to:
+  /// **'Didn\'t receive the code?\nresend in {time} min'**
+  String lblResendIn(String time);
+
+  /// No description provided for @lblOtpWrong.
+  ///
+  /// In en, this message translates to:
+  /// **'That code isn\'t right. Try again'**
+  String get lblOtpWrong;
+
+  /// No description provided for @lblOtpLocked.
+  ///
+  /// In en, this message translates to:
+  /// **'Too many wrong codes. Resend a new code to try again'**
+  String get lblOtpLocked;
 }
 
 class _AppLocalizationsDelegate

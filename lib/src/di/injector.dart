@@ -12,4 +12,5 @@ T register<T extends Object>(T instance, {String? instanceName}) =>
     _getIt.registerSingleton<T>(instance, instanceName: instanceName);
 
 @InjectableInit()
-Future<GetIt> configureDependencies() async => _getIt.init();
+Future<GetIt> configureDependencies({String? environment}) async =>
+    _getIt.init(environment: environment);

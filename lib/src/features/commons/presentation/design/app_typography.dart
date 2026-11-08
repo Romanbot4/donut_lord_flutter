@@ -6,17 +6,21 @@ class AppTypography {
   final Locale? _locale;
   AppTypography(this._locale);
 
-  static const ffLatin = "Roboto";
-  static const ffMyanmar = "Noto Sans Myanmar";
+  static const ffEnglish = "General Sans";
+  static const ffUnicode = "Noto Sans Myanmar";
+  static const ffDisplay = "Menco";
 
   static const _defaultTextColor = AppColors.neutral900;
   static const _mutedTextColor = AppColors.neutral600;
+  static const _buttonLetterSpacing = 1.2;
 
   bool get _isMyanmar => _locale?.languageCode == "my";
 
-  late final ffPrimary = _isMyanmar ? ffMyanmar : ffLatin;
+  late final ffPrimary = _isMyanmar ? ffUnicode : ffEnglish;
 
-  late final _fallbackFonts = [ffLatin, ffMyanmar];
+  late final ffHeading = _isMyanmar ? ffUnicode : ffDisplay;
+
+  late final _fallbackFonts = [ffEnglish, ffUnicode];
 
   TextStyle _style({
     required String fontFamily,
@@ -37,73 +41,65 @@ class AppTypography {
   }
 
   late final display1 = _style(
-    fontFamily: ffPrimary,
-    fontSize: 57,
-    lineHeight: 64,
-    fontWeight: FontWeight.w400,
-    letterSpacing: -0.25,
+    fontFamily: ffHeading,
+    fontSize: 40,
+    lineHeight: 48,
+    fontWeight: FontWeight.w700,
   );
 
   late final display2 = _style(
-    fontFamily: ffPrimary,
-    fontSize: 45,
-    lineHeight: 52,
-    fontWeight: FontWeight.w400,
+    fontFamily: ffHeading,
+    fontSize: 36,
+    lineHeight: 44,
+    fontWeight: FontWeight.w700,
   );
 
   late final display3 = _style(
-    fontFamily: ffPrimary,
-    fontSize: 36,
-    lineHeight: 44,
-    fontWeight: FontWeight.w400,
-  );
-  late final heading1 = _style(
-    fontFamily: ffPrimary,
+    fontFamily: ffHeading,
     fontSize: 32,
     lineHeight: 40,
-    fontWeight: FontWeight.w400,
+    fontWeight: FontWeight.w700,
   );
-
-  /// Member name on Home ("Hania").
-  late final heading2 = _style(
-    fontFamily: ffPrimary,
+  late final heading1 = _style(
+    fontFamily: ffHeading,
     fontSize: 28,
-    lineHeight: 36,
-    fontWeight: FontWeight.w400,
+    lineHeight: 34,
+    fontWeight: FontWeight.w700,
   );
 
-  /// Banner titles, challenge card titles ("Eat 4 Coco donuts").
-  late final heading3 = _style(
-    fontFamily: ffPrimary,
+  late final heading2 = _style(
+    fontFamily: ffHeading,
     fontSize: 24,
-    lineHeight: 32,
-    fontWeight: FontWeight.w400,
+    lineHeight: 30,
+    fontWeight: FontWeight.w700,
   );
 
-  // ── Titles ────────────────────────────────────────────────────────────────
+  late final heading3 = _style(
+    fontFamily: ffHeading,
+    fontSize: 20,
+    lineHeight: 26,
+    fontWeight: FontWeight.w700,
+  );
 
-  /// Section headers ("Seasonal specials", "Popular"), tier names ("Silver").
   late final title1 = _style(
-    fontFamily: ffPrimary,
-    fontSize: 22,
-    lineHeight: 28,
-    fontWeight: FontWeight.w400,
+    fontFamily: ffHeading,
+    fontSize: 18,
+    lineHeight: 24,
+    fontWeight: FontWeight.w500,
   );
 
   late final title2 = _style(
     fontFamily: ffPrimary,
     fontSize: 16,
-    lineHeight: 24,
-    fontWeight: FontWeight.w500,
-    letterSpacing: 0.15,
+    lineHeight: 22,
+    fontWeight: FontWeight.w600,
   );
 
   late final title3 = _style(
     fontFamily: ffPrimary,
     fontSize: 14,
     lineHeight: 20,
-    fontWeight: FontWeight.w500,
-    letterSpacing: 0.1,
+    fontWeight: FontWeight.w600,
   );
 
   late final paragraph1 = _style(
@@ -111,7 +107,6 @@ class AppTypography {
     fontSize: 16,
     lineHeight: 24,
     fontWeight: FontWeight.w400,
-    letterSpacing: 0.5,
   );
 
   late final paragraph2 = _style(
@@ -119,7 +114,6 @@ class AppTypography {
     fontSize: 14,
     lineHeight: 20,
     fontWeight: FontWeight.w400,
-    letterSpacing: 0.25,
   );
 
   late final paragraph3 = _style(
@@ -127,32 +121,28 @@ class AppTypography {
     fontSize: 12,
     lineHeight: 16,
     fontWeight: FontWeight.w400,
-    letterSpacing: 0.4,
   );
 
   late final label1 = _style(
     fontFamily: ffPrimary,
     fontSize: 14,
     lineHeight: 20,
-    fontWeight: FontWeight.w500,
-    letterSpacing: 0.1,
+    fontWeight: FontWeight.w700,
+    letterSpacing: _buttonLetterSpacing,
   );
 
-  /// Badges and chips ("50% off", "New", "New shop"), bottom-nav label.
   late final label2 = _style(
     fontFamily: ffPrimary,
     fontSize: 12,
     lineHeight: 16,
-    fontWeight: FontWeight.w500,
-    letterSpacing: 0.5,
+    fontWeight: FontWeight.w600,
   );
 
   late final label3 = _style(
     fontFamily: ffPrimary,
-    fontSize: 11,
-    lineHeight: 16,
-    fontWeight: FontWeight.w500,
-    letterSpacing: 0.5,
+    fontSize: 10,
+    lineHeight: 14,
+    fontWeight: FontWeight.w400,
   );
 
   late final _defaultTextOverFlow = TextOverflow.ellipsis;

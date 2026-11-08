@@ -1,4 +1,63 @@
 {
   "@@locale": "en",
-  "lblPressAgainToExit": "Press again to exit"
+  "lblPressAgainToExit": "Press again to exit",
+  "lblLogoutSuccess": "Logout successful",
+  "lblSessionExpired": "Your session expired — please sign in again.",
+  "btnContinue": "Continue",
+  "btnLetsExplore": "Let's explore",
+  "btnLogin": "Log In",
+  "lblAgreementPart1": "By continuing, you acknowledge that you have read and agree to our ",
+  "lblAgreementPart2": ".",
+  "lblAlreadyHaveAnAccount": "Already have an account?",
+  "lblAnd": " and ",
+  "lblComingSoon": "Coming soon",
+  "lblDateOfBirthInFuture": "Date of birth can't be in the future",
+  "lblDateOfBirthInvalid": "This date doesn't exist. Check the day, month and year",
+  "lblDateOfBirthTooYoung": "You must be at least {age} years old",
+  "@lblDateOfBirthTooYoung": {
+    "placeholders": {
+      "age": {
+        "type": "int"
+      }
+    }
+  },
+  "lblDay": "Day",
+  "lblEnterOtp": "Verify your number",
+  "lblEnterPhone": "Enter your phone number",
+  "lblFirstName": "First Name",
+  "lblFirstNameRequired": "Please enter your first name",
+  "lblLastName": "Last Name",
+  "lblNameInvalid": "Use letters and spaces only, no numbers or symbols",
+  "lblNameTooLong": "Use {max} characters or fewer",
+  "@lblNameTooLong": {
+    "placeholders": {
+      "max": {
+        "type": "int"
+      }
+    }
+  },
+  "lblMonth": "Month",
+  "lblOtpSent": "We've sent 6 digit OTP to {phone}.",
+  "lblPrivacyPolicy": "Privacy Policy",
+  "lblRoundFoodForEveryMood": "Round food for\nevery mood",
+  "lblLetsGetStarted": "Let's get started",
+  "lblTermsOfService": "Terms of Service",
+  "lblWelcome": "Welcome",
+  "lblWelcomeBackUser": "Welcome back {user}",
+  "lblWelcomeToTheWorldOfJDonuts": "Welcome to the world of J'donuts",
+  "lblWhatsYourDateOfBirth": "What's your date of birth?",
+  "lblWhatsYourName": "What's your name?",
+  "lblYear": "Year",
+  "lblEnterValidPhoneNumber": "Enter a valid phone number",
+  "lblResentCounterResend": "Resend code",
+  "lblResendIn": "Didn't receive the code?\nresend in {time} min",
+  "@lblResendIn": {
+    "placeholders": {
+      "time": {
+        "type": "String"
+      }
+    }
+  },
+  "lblOtpWrong": "That code isn't right. Try again",
+  "lblOtpLocked": "Too many wrong codes. Resend a new code to try again"
 }

@@ -3,10 +3,7 @@ import 'package:jdonuts/src/features/commons/domain/domain.dart';
 import 'package:jdonuts/src/features/commons/presentation/presentation.dart';
 import 'package:top_snackbar_flutter/top_snack_bar.dart';
 
-// TODO: swap the margin below for a spacing token once styles come over.
 abstract interface class Snacks {
-  static const _horizontalMargin = 16.0;
-
   static void _showMessage(
     BuildContext context, {
     required String message,
@@ -22,11 +19,11 @@ abstract interface class Snacks {
         children: [
           Container(
             constraints: BoxConstraints(
-              maxWidth: context.width - (2 * _horizontalMargin),
+              maxWidth: context.width - (2 * AppInsets.md),
             ),
             decoration: BoxDecoration(
               color: backgroundColor ?? context.theme.cardColor,
-              borderRadius: BorderRadius.circular(16.0),
+              borderRadius: BorderRadius.circular(AppRadius.lg),
             ),
             padding: const EdgeInsets.symmetric(
               vertical: 8.0,

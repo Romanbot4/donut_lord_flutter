@@ -11,4 +11,134 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get lblPressAgainToExit => 'Press again to exit';
+
+  @override
+  String get lblLogoutSuccess => 'Logout successful';
+
+  @override
+  String get lblSessionExpired =>
+      'Your session expired — please sign in again.';
+
+  @override
+  String get btnContinue => 'Continue';
+
+  @override
+  String get btnLetsExplore => 'Let\'s explore';
+
+  @override
+  String get btnLogin => 'Log In';
+
+  @override
+  String get lblAgreementPart1 =>
+      'By continuing, you acknowledge that you have read and agree to our ';
+
+  @override
+  String get lblAgreementPart2 => '.';
+
+  @override
+  String get lblAlreadyHaveAnAccount => 'Already have an account?';
+
+  @override
+  String get lblAnd => ' and ';
+
+  @override
+  String get lblComingSoon => 'Coming soon';
+
+  @override
+  String get lblDateOfBirthInFuture => 'Date of birth can\'t be in the future';
+
+  @override
+  String get lblDateOfBirthInvalid =>
+      'This date doesn\'t exist. Check the day, month and year';
+
+  @override
+  String lblDateOfBirthTooYoung(int age) {
+    return 'You must be at least $age years old';
+  }
+
+  @override
+  String get lblDay => 'Day';
+
+  @override
+  String get lblEnterOtp => 'Verify your number';
+
+  @override
+  String get lblEnterPhone => 'Enter your phone number';
+
+  @override
+  String get lblFirstName => 'First Name';
+
+  @override
+  String get lblFirstNameRequired => 'Please enter your first name';
+
+  @override
+  String get lblLastName => 'Last Name';
+
+  @override
+  String get lblNameInvalid =>
+      'Use letters and spaces only, no numbers or symbols';
+
+  @override
+  String lblNameTooLong(int max) {
+    return 'Use $max characters or fewer';
+  }
+
+  @override
+  String get lblMonth => 'Month';
+
+  @override
+  String lblOtpSent(Object phone) {
+    return 'We\'ve sent 6 digit OTP to $phone.';
+  }
+
+  @override
+  String get lblPrivacyPolicy => 'Privacy Policy';
+
+  @override
+  String get lblRoundFoodForEveryMood => 'Round food for\nevery mood';
+
+  @override
+  String get lblLetsGetStarted => 'Let\'s get started';
+
+  @override
+  String get lblTermsOfService => 'Terms of Service';
+
+  @override
+  String get lblWelcome => 'Welcome';
+
+  @override
+  String lblWelcomeBackUser(Object user) {
+    return 'Welcome back $user';
+  }
+
+  @override
+  String get lblWelcomeToTheWorldOfJDonuts =>
+      'Welcome to the world of J\'donuts';
+
+  @override
+  String get lblWhatsYourDateOfBirth => 'What\'s your date of birth?';
+
+  @override
+  String get lblWhatsYourName => 'What\'s your name?';
+
+  @override
+  String get lblYear => 'Year';
+
+  @override
+  String get lblEnterValidPhoneNumber => 'Enter a valid phone number';
+
+  @override
+  String get lblResentCounterResend => 'Resend code';
+
+  @override
+  String lblResendIn(String time) {
+    return 'Didn\'t receive the code?\nresend in $time min';
+  }
+
+  @override
+  String get lblOtpWrong => 'That code isn\'t right. Try again';
+
+  @override
+  String get lblOtpLocked =>
+      'Too many wrong codes. Resend a new code to try again';
 }
