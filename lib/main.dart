@@ -4,6 +4,7 @@ import 'package:jdonuts/app.dart';
 import 'package:jdonuts/src/config/config.dart';
 import 'package:jdonuts/src/di/di.dart';
 import 'package:jdonuts/src/features/auth/presentation/presentation.dart';
+import 'package:jdonuts/src/features/cart/presentation/presentation.dart';
 import 'package:jdonuts/src/features/commons/domain/domain.dart';
 
 import 'flavors.dart';
@@ -37,6 +38,7 @@ Future<void> main() async {
       localization: inject<ILocalization>(),
       router: inject<IAppRouter>(),
       session: inject<SessionCubit>(),
+      cart: inject<CartCubit>()..load(),
     ),
   );
 }

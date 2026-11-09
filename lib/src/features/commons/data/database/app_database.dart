@@ -53,6 +53,7 @@ class MenuItems extends Table {
   BoolColumn get isNew => boolean()();
   TextColumn get imageUrl => text()();
   RealColumn get imageAspectRatio => real()();
+  TextColumn get description => text().nullable()();
 
   @override
   Set<Column> get primaryKey => {id};
@@ -76,11 +77,14 @@ class AppDatabase extends _$AppDatabase {
   AppDatabase(super.executor);
 
   @override
-  int get schemaVersion => 1;
+  int get schemaVersion => 2;
 
   @override
   MigrationStrategy get migration => MigrationStrategy(
     onCreate: (migrator) => migrator.createAll(),
+    onUpgrade: (migrator, from, to) async {
+      if (from < 2) await migrator.addColumn(menuItems, menuItems.description);
+    },
     beforeOpen: (details) => customStatement('PRAGMA foreign_keys = ON'),
   );
 }

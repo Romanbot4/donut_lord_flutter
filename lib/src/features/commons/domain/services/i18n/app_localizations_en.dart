@@ -221,4 +221,46 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get lblSectionError => 'Couldn\'t load this section';
+
+  @override
+  String get lblNew => 'New';
+
+  @override
+  String get btnAddToCart => 'Add to cart';
+
+  @override
+  String lblPriceMmk(String price) {
+    return '$price MMK';
+  }
+
+  @override
+  String get lblWhatsThis => 'What\'s this?';
+
+  @override
+  String lblAddedToCart(int quantity, String name) {
+    return '$quantity × $name added to cart';
+  }
+
+  @override
+  String get lblAddToCartFailed => 'Couldn\'t add to cart. Please try again.';
+
+  @override
+  String get lblDecreaseQuantity => 'Decrease quantity';
+
+  @override
+  String get lblIncreaseQuantity => 'Increase quantity';
+
+  @override
+  String lblCartItems(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count Items',
+      one: '1 Item',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get btnCheckOut => 'Check Out';
 }

@@ -2,6 +2,7 @@ export 'design/app_colors.dart';
 export 'design/app_insets.dart';
 export 'design/app_motion.dart';
 export 'design/app_radius.dart';
+export 'design/app_shadows.dart';
 export 'design/app_spacing.dart';
 export 'design/app_theme.dart';
 export 'design/app_typography.dart';

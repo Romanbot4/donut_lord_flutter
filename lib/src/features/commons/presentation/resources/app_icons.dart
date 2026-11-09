@@ -1,6 +1,8 @@
 abstract final class AppIcons {
   static const _icons = 'assets/icons';
 
+  static const arrowLeftLinear = '$_icons/arrow-left-linear.svg';
+  static const bagLinear = '$_icons/bag-linear.svg';
   static const homeLinear = '$_icons/home-linear.svg';
   static const crownLinear = '$_icons/crown-linear.svg';
   static const donutLinear = '$_icons/donut-linear.svg';

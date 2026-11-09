@@ -1,47 +1,13 @@
-import 'dart:convert';
-
 import 'package:drift/native.dart';
-import 'package:flutter/services.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:jdonuts/src/features/commons/data/data.dart';
 import 'package:jdonuts/src/features/home/data/data.dart';
 
-const _seed = {
-  'shops': [
-    {'id': 'central', 'name': 'Central', 'address': 'Yangon'},
-  ],
-  'menuSections': [
-    {
-      'id': 'popular',
-      'title': 'Popular',
-      'itemAspectRatio': 0.75,
-      'items': [
-        {
-          'id': 'coconut',
-          'code': 'JD022123',
-          'name': 'Coconut Donut',
-          'priceMmk': 3200,
-          'imageUrl': 'assets/seed/images/coconut.png',
-          'promotion': {'label': '20% off', 'kind': 'discount'},
-        },
-      ],
-    },
-  ],
-};
+import '../../../support/seed_bundle.dart';
 
 const _remoteFeed = HomeFeedModel(
   menuSections: [MenuSectionModel(id: 'seasonal', title: 'Seasonal specials')],
 );
-
-class _SeedBundle extends AssetBundle {
-  @override
-  Future<ByteData> load(String key) async =>
-      ByteData.sublistView(utf8.encode(jsonEncode(_seed)));
-
-  @override
-  Future<String> loadString(String key, {bool cache = true}) async =>
-      jsonEncode(_seed);
-}
 
 class _FakeHomeApiClient implements HomeApiClient {
   bool failNext = false;
@@ -61,7 +27,7 @@ void main() {
   setUp(() {
     db = AppDatabase(NativeDatabase.memory());
     api = _FakeHomeApiClient();
-    repository = HomeRepository(HomeLocalDataSource(db, _SeedBundle()), api);
+    repository = HomeRepository(HomeLocalDataSource(db, SeedBundle()), api);
   });
 
   tearDown(() => db.close());

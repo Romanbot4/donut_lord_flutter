@@ -15,21 +15,37 @@ class HomeLocalDataSource {
   const HomeLocalDataSource(this._db, this._bundle);
 
   static const seedAsset = 'assets/seed/home.json';
+  static const descriptionsSeedAsset = 'assets/seed/products.json';
 
   Future<void> seedIfEmpty() async {
     final firstSection = await (_db.select(_db.menuSections)..limit(1))
         .getSingleOrNull();
-    if (firstSection != null) return;
+    if (firstSection == null) {
+      final seed = jsonDecode(await _bundle.loadString(seedAsset));
+      await replaceFeed(HomeFeedModel.fromJson(seed as Map<String, dynamic>));
+    }
+    await _seedMissingDescriptions();
+  }
 
-    final seed = jsonDecode(await _bundle.loadString(seedAsset));
-    await replaceFeed(HomeFeedModel.fromJson(seed as Map<String, dynamic>));
+  Future<void> _seedMissingDescriptions() async {
+    final seed = jsonDecode(await _bundle.loadString(descriptionsSeedAsset));
+    await _db.batch((batch) {
+      for (final product in seed as List<dynamic>) {
+        final json = product as Map<String, dynamic>;
+        batch.update(
+          _db.menuItems,
+          MenuItemsCompanion(description: Value(json['description'] as String?)),
+          where: (item) =>
+              item.id.equals(json['id'] as String) & item.description.isNull(),
+        );
+      }
+    });
   }
 
   Future<void> replaceFeed(HomeFeedModel feed) {
     return _db.transaction(() async {
       await _db.delete(_db.sectionItems).go();
       await _db.delete(_db.menuSections).go();
-      await _db.delete(_db.menuItems).go();
       await _db.delete(_db.shops).go();
       await _db.batch((batch) {
         batch.insertAll(_db.shops, [

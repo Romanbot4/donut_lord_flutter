@@ -105,5 +105,39 @@
   "lblRefreshFailed": "Couldn't refresh. Showing the last loaded menu.",
   "lblOffline": "You're offline. Showing saved data.",
   "lblSectionEmpty": "Nothing here yet",
-  "lblSectionError": "Couldn't load this section"
+  "lblSectionError": "Couldn't load this section",
+  "lblNew": "New",
+  "btnAddToCart": "Add to cart",
+  "lblPriceMmk": "{price} MMK",
+  "@lblPriceMmk": {
+    "placeholders": {
+      "price": {
+        "type": "String"
+      }
+    }
+  },
+  "lblWhatsThis": "What's this?",
+  "lblAddedToCart": "{quantity} × {name} added to cart",
+  "@lblAddedToCart": {
+    "placeholders": {
+      "quantity": {
+        "type": "int"
+      },
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "lblAddToCartFailed": "Couldn't add to cart. Please try again.",
+  "lblDecreaseQuantity": "Decrease quantity",
+  "lblIncreaseQuantity": "Increase quantity",
+  "lblCartItems": "{count, plural, =1{1 Item} other{{count} Items}}",
+  "@lblCartItems": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "btnCheckOut": "Check Out"
 }

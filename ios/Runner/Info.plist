@@ -68,5 +68,12 @@
 		</array>
 		<key>UIStatusBarHidden</key>
 		<false/>
+		<key>NSAppTransportSecurity</key>
+	<dict>
+		<key>NSAllowsLocalNetworking</key>
+		<true/>
 	</dict>
+	<key>NSLocalNetworkUsageDescription</key>
+	<string>J'Donuts connects to a development server on your local network.</string>
+</dict>
 </plist>

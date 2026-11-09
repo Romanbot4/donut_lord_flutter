@@ -25,12 +25,13 @@ class StyledBackButton extends StatelessWidget {
         child: Container(
           width: _size,
           height: _size,
+          alignment: Alignment.center,
           decoration: BoxDecoration(
             color: context.theme.cardColor,
             borderRadius: BorderRadius.circular(AppRadius.md),
           ),
-          child: Icon(
-            Icons.arrow_back_rounded,
+          child: StyledSvgIcon(
+            AppIcons.arrowLeftLinear,
             size: _iconSize,
             color: context.textTheme.bodyLarge?.color,
           ),

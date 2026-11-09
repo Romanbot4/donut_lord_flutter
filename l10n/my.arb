@@ -60,5 +60,15 @@
   "lblRefreshFailed": "ပြန်လည်မွမ်းမံ၍ မရပါ။ နောက်ဆုံးရရှိထားသော မီနူးကို ပြသထားပါသည်။",
   "lblOffline": "အင်တာနက်မရှိပါ။ သိမ်းထားသော အချက်အလက်ကို ပြသထားပါသည်။",
   "lblSectionEmpty": "ဤနေရာတွင် မရှိသေးပါ",
-  "lblSectionError": "ဤအပိုင်းကို ဖွင့်၍မရပါ"
+  "lblSectionError": "ဤအပိုင်းကို ဖွင့်၍မရပါ",
+  "lblNew": "အသစ်",
+  "btnAddToCart": "ခြင်းထဲထည့်မည်",
+  "lblPriceMmk": "{price} ကျပ်",
+  "lblWhatsThis": "ဤအရာက ဘာလဲ?",
+  "lblAddedToCart": "{name} {quantity} ခု ခြင်းထဲ ထည့်ပြီးပါပြီ",
+  "lblAddToCartFailed": "ခြင်းထဲ ထည့်၍မရပါ။ ထပ်မံကြိုးစားပါ။",
+  "lblDecreaseQuantity": "အရေအတွက် လျှော့ရန်",
+  "lblIncreaseQuantity": "အရေအတွက် တိုးရန်",
+  "lblCartItems": "{count, plural, other{ပစ္စည်း {count} ခု}}",
+  "btnCheckOut": "ငွေရှင်းမည်"
 }

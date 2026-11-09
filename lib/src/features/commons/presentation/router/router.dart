@@ -9,6 +9,8 @@ import 'package:jdonuts/src/features/auth/presentation/presentation.dart';
 import 'package:jdonuts/src/features/commons/domain/domain.dart';
 import 'package:jdonuts/src/features/commons/presentation/presentation.dart';
 import 'package:jdonuts/src/features/home/presentation/presentation.dart';
+import 'package:jdonuts/src/features/product/domain/domain.dart';
+import 'package:jdonuts/src/features/product/presentation/presentation.dart';
 import 'package:jdonuts/src/features/settings/presentation/presentation.dart';
 
 @Injectable(as: IAppRouter)
@@ -117,6 +119,23 @@ final class AppRouter implements IAppRouter {
   );
 
   late final List<GoRoute> _authRoutes = [
+    GoRoute(
+      path: ProductDetailPage.routePath,
+      pageBuilder: (context, state) {
+        final productId = state.pathParameters[ProductDetailPage.idParam]!;
+        final preview = state.extra is ProductPreview
+            ? state.extra! as ProductPreview
+            : null;
+        return _slidePage(
+          state,
+          BlocProvider(
+            create: (_) =>
+                inject<ProductDetailCubit>()..load(productId, preview: preview),
+            child: ProductDetailPage(productId: productId),
+          ),
+        );
+      },
+    ),
     GoRoute(
       path: OnboardingPage.routePath,
       pageBuilder: (context, state) => _fadePage(state, const OnboardingPage()),

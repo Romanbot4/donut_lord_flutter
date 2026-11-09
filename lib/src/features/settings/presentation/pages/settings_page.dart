@@ -19,7 +19,7 @@ class SettingsPage extends StatelessWidget {
           AppInsets.md,
           AppInsets.md,
           AppInsets.md,
-          IndexLayout.bottomInset(context),
+          context.padding.bottom,
         ),
         children: [
           Text(strings.lblSettings, style: context.textTheme.headlineLarge),

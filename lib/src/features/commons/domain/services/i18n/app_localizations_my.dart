@@ -220,4 +220,45 @@ class AppLocalizationsMy extends AppLocalizations {
 
   @override
   String get lblSectionError => 'ဤအပိုင်းကို ဖွင့်၍မရပါ';
+
+  @override
+  String get lblNew => 'အသစ်';
+
+  @override
+  String get btnAddToCart => 'ခြင်းထဲထည့်မည်';
+
+  @override
+  String lblPriceMmk(String price) {
+    return '$price ကျပ်';
+  }
+
+  @override
+  String get lblWhatsThis => 'ဤအရာက ဘာလဲ?';
+
+  @override
+  String lblAddedToCart(int quantity, String name) {
+    return '$name $quantity ခု ခြင်းထဲ ထည့်ပြီးပါပြီ';
+  }
+
+  @override
+  String get lblAddToCartFailed => 'ခြင်းထဲ ထည့်၍မရပါ။ ထပ်မံကြိုးစားပါ။';
+
+  @override
+  String get lblDecreaseQuantity => 'အရေအတွက် လျှော့ရန်';
+
+  @override
+  String get lblIncreaseQuantity => 'အရေအတွက် တိုးရန်';
+
+  @override
+  String lblCartItems(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: 'ပစ္စည်း $count ခု',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get btnCheckOut => 'ငွေရှင်းမည်';
 }

@@ -463,6 +463,66 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Couldn\'t load this section'**
   String get lblSectionError;
+
+  /// No description provided for @lblNew.
+  ///
+  /// In en, this message translates to:
+  /// **'New'**
+  String get lblNew;
+
+  /// No description provided for @btnAddToCart.
+  ///
+  /// In en, this message translates to:
+  /// **'Add to cart'**
+  String get btnAddToCart;
+
+  /// No description provided for @lblPriceMmk.
+  ///
+  /// In en, this message translates to:
+  /// **'{price} MMK'**
+  String lblPriceMmk(String price);
+
+  /// No description provided for @lblWhatsThis.
+  ///
+  /// In en, this message translates to:
+  /// **'What\'s this?'**
+  String get lblWhatsThis;
+
+  /// No description provided for @lblAddedToCart.
+  ///
+  /// In en, this message translates to:
+  /// **'{quantity} × {name} added to cart'**
+  String lblAddedToCart(int quantity, String name);
+
+  /// No description provided for @lblAddToCartFailed.
+  ///
+  /// In en, this message translates to:
+  /// **'Couldn\'t add to cart. Please try again.'**
+  String get lblAddToCartFailed;
+
+  /// No description provided for @lblDecreaseQuantity.
+  ///
+  /// In en, this message translates to:
+  /// **'Decrease quantity'**
+  String get lblDecreaseQuantity;
+
+  /// No description provided for @lblIncreaseQuantity.
+  ///
+  /// In en, this message translates to:
+  /// **'Increase quantity'**
+  String get lblIncreaseQuantity;
+
+  /// No description provided for @lblCartItems.
+  ///
+  /// In en, this message translates to:
+  /// **'{count, plural, =1{1 Item} other{{count} Items}}'**
+  String lblCartItems(int count);
+
+  /// No description provided for @btnCheckOut.
+  ///
+  /// In en, this message translates to:
+  /// **'Check Out'**
+  String get btnCheckOut;
 }
 
 class _AppLocalizationsDelegate

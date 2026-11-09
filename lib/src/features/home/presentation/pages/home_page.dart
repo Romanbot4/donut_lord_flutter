@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:jdonuts/src/di/di.dart';
 import 'package:jdonuts/src/features/auth/presentation/presentation.dart';
+import 'package:jdonuts/src/features/cart/presentation/presentation.dart';
 import 'package:jdonuts/src/features/commons/presentation/presentation.dart';
 import 'package:jdonuts/src/features/home/presentation/presentation.dart';
 
@@ -47,46 +48,62 @@ class _HomeView extends StatelessWidget {
       ),
       child: ColoredBox(
         color: context.theme.scaffoldBackgroundColor,
-        child: RefreshIndicator(
-          onRefresh: cubit.refresh,
-          child: CustomScrollView(
-            physics: const AlwaysScrollableScrollPhysics(),
-            slivers: [
-              HomeSliverAppBar(
-                memberName: memberName,
-                member: state.member,
-                shops: state.feed?.shops ?? const [],
-                isLoadingShops: state.isLoading,
-              ),
-              SliverToBoxAdapter(
-                child: StyledOfflineBanner(isOffline: state.isOffline),
-              ),
-              SliverPadding(
-                padding: const EdgeInsets.only(top: AppInsets.md),
-                sliver: SliverList.separated(
-                  itemCount: sections.length,
-                  separatorBuilder: (_, _) =>
-                      const SizedBox(height: AppSpacing.md),
-                  itemBuilder: (context, index) => sections[index].slideUpIn(
-                        enabled: animate,
-                        delay: AppMotion.stagger * index,
-                        offset: AppMotion.contentSlideOffset,
-                      ),
-                ),
-              ),
-              SliverPadding(
-                padding: const EdgeInsets.only(top: AppInsets.lg),
-                sliver: SliverToBoxAdapter(
-                  child: HomeNearbyShopsSection(
-                    shops: state.feed?.shops,
-                    hasFailed: state.loadFailure != null,
-                    onRetry: cubit.retry,
-                    bottomInset: IndexLayout.bottomInset(context),
+        child: Stack(
+          children: [
+            RefreshIndicator(
+              onRefresh: cubit.refresh,
+              child: CustomScrollView(
+                physics: const AlwaysScrollableScrollPhysics(),
+                slivers: [
+                  HomeSliverAppBar(
+                    memberName: memberName,
+                    member: state.member,
+                    shops: state.feed?.shops ?? const [],
+                    isLoadingShops: state.isLoading,
                   ),
+                  SliverToBoxAdapter(
+                    child: StyledOfflineBanner(isOffline: state.isOffline),
+                  ),
+                  SliverPadding(
+                    padding: const EdgeInsets.only(top: AppInsets.md),
+                    sliver: SliverList.separated(
+                      itemCount: sections.length,
+                      separatorBuilder: (_, _) =>
+                          const SizedBox(height: AppSpacing.md),
+                      itemBuilder: (context, index) =>
+                          sections[index].slideUpIn(
+                            enabled: animate,
+                            delay: AppMotion.stagger * index,
+                            offset: AppMotion.contentSlideOffset,
+                          ),
+                    ),
+                  ),
+                  SliverPadding(
+                    padding: const EdgeInsets.only(top: AppInsets.lg),
+                    sliver: SliverToBoxAdapter(
+                      child: HomeNearbyShopsSection(
+                        shops: state.feed?.shops,
+                        hasFailed: state.loadFailure != null,
+                        onRetry: cubit.retry,
+                        bottomInset: context.padding.bottom,
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+            ),
+            Positioned(
+              left: AppInsets.md,
+              right: AppInsets.md,
+              bottom: context.padding.bottom + AppInsets.sm,
+              child: CartFloatingBar(
+                onCheckout: () => Snacks.info(
+                  context,
+                  message: context.localizations.lblComingSoon,
                 ),
               ),
-            ],
-          ),
+            ),
+          ],
         ),
       ),
     );

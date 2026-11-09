@@ -1,21 +1,38 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import 'package:jdonuts/src/features/commons/presentation/presentation.dart';
 import 'package:jdonuts/src/features/home/domain/domain.dart';
 import 'package:jdonuts/src/features/home/presentation/presentation.dart';
+import 'package:jdonuts/src/features/product/domain/domain.dart';
+import 'package:jdonuts/src/features/product/presentation/presentation.dart';
 
 class MenuItemCard extends StatelessWidget {
   final MenuItem item;
   final double width;
   final double cardAspectRatio;
-  final VoidCallback? onTap;
+  final String heroTag;
 
   const MenuItemCard({
     super.key,
     required this.item,
     required this.width,
     required this.cardAspectRatio,
-    this.onTap,
+    required this.heroTag,
   });
+
+  void _openDetail(BuildContext context) => context.push(
+    ProductDetailPage.pathFor(item.id),
+    extra: ProductPreview(
+      id: item.id,
+      code: item.code,
+      name: item.name,
+      priceMmk: item.priceMmk,
+      isNew: item.isNew,
+      imageUrl: item.imageUrl,
+      imageAspectRatio: item.imageAspectRatio,
+      heroTag: heroTag,
+    ),
+  );
 
   static const nameMaxLines = 2;
 
@@ -30,7 +47,7 @@ class MenuItemCard extends StatelessWidget {
 
     return GestureDetector(
       behavior: HitTestBehavior.opaque,
-      onTap: onTap,
+      onTap: () => _openDetail(context),
       child: SizedBox(
         width: width,
         child: Column(
@@ -45,7 +62,12 @@ class MenuItemCard extends StatelessWidget {
                   color: context.theme.cardColor,
                   child: Stack(
                     children: [
-                      Positioned.fill(child: StyledImage(item.imageUrl)),
+                      Positioned.fill(
+                        child: Hero(
+                          tag: heroTag,
+                          child: StyledImage(item.imageUrl),
+                        ),
+                      ),
                       if (promotion != null)
                         PromotionBadge(promotion: promotion),
                     ],

@@ -54,6 +54,7 @@ class HomeMenuSection extends StatelessWidget {
                 item: section.items[index],
                 width: width,
                 cardAspectRatio: section.itemAspectRatio,
+                heroTag: 'menu-${section.id}-${section.items[index].id}',
               ),
             ),
           ),
