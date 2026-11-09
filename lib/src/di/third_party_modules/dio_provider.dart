@@ -4,6 +4,7 @@ import 'package:injectable/injectable.dart';
 import 'package:jdonuts/src/config/config.dart';
 import 'package:jdonuts/src/features/auth/data/data.dart';
 import 'package:jdonuts/src/features/auth/domain/domain.dart';
+import 'package:jdonuts/src/features/commons/data/data.dart';
 import 'package:talker_dio_logger/talker_dio_logger.dart';
 
 @module
@@ -12,10 +13,10 @@ abstract class DioProvider {
   Dio provide(IAuthTokenStore tokens, ISessionEvents session) {
     final dio = _createDio();
     final refreshClient = AuthApiClient(_createDio(), baseUrl: AuthApi.baseUrl);
-    dio.interceptors.insert(
-      0,
+    dio.interceptors.insertAll(0, [
       AuthInterceptor(dio, refreshClient, tokens, session),
-    );
+      RetryInterceptor(dio),
+    ]);
     return dio;
   }
 

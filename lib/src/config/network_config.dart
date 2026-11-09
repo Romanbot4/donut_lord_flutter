@@ -10,7 +10,10 @@ abstract class NetworkConfig {
     'Content-Type': 'application/json',
   };
 
-  static const receiveTimeout = Duration(seconds: 8000);
-  static const connectTimeout = Duration(seconds: 8000);
-  static const sendTimeout = Duration(seconds: 8000);
+  static const receiveTimeout = Duration(seconds: 8);
+  static const connectTimeout = Duration(seconds: 8);
+  static const sendTimeout = Duration(seconds: 8);
+
+  static const maxRetries = 2;
+  static const retryDelay = Duration(milliseconds: 500);
 }

@@ -15,4 +15,5 @@ export 'services/localization/localization.dart';
 export 'services/localization/mappers/locale_mapper.dart';
 export 'services/localization/models/locale_model.dart';
 export 'services/navigation_key_provider/navigation_key_provider.dart';
+export 'services/network/retry_interceptor.dart';
 export 'services/secure_storage/secure_storage.dart';

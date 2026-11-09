@@ -6,7 +6,7 @@ abstract final class AuthConfig {
 
   static const backend = String.fromEnvironment(
     'AUTH_BACKEND',
-    defaultValue: remote,
+    defaultValue: fake,
   );
 
   static const fakeStepDelay = Duration(seconds: 1);
