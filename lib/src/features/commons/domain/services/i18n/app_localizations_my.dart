@@ -300,4 +300,10 @@ class AppLocalizationsMy extends AppLocalizations {
 
   @override
   String get lblYoullBeHereSoon => 'မကြာမီ ရောက်ရှိပါမည်';
+
+  @override
+  String get lblLogOutConfirmTitle => 'အကောင့်မှ ထွက်မလား?';
+
+  @override
+  String get btnCancel => 'မလုပ်တော့ပါ';
 }

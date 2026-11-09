@@ -6,6 +6,7 @@ class StyledPrimaryButton extends StatefulWidget {
   final VoidCallback? onTap;
   final bool isLoading;
   final bool isEnabled;
+  final Color? color;
 
   const StyledPrimaryButton({
     super.key,
@@ -13,6 +14,7 @@ class StyledPrimaryButton extends StatefulWidget {
     this.onTap,
     this.isLoading = false,
     this.isEnabled = true,
+    this.color,
   });
 
   @override
@@ -37,7 +39,7 @@ class _StyledPrimaryButtonState extends State<StyledPrimaryButton> {
   Widget build(BuildContext context) {
     final colors = context.theme.colorScheme;
     final background = widget.isEnabled
-        ? colors.secondary
+        ? widget.color ?? colors.secondary
         : AppColors.neutral200;
 
     return GestureDetector(

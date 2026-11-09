@@ -177,5 +177,7 @@
       }
     }
   },
-  "lblYoullBeHereSoon": "You'll be here soon"
+  "lblYoullBeHereSoon": "You'll be here soon",
+  "lblLogOutConfirmTitle": "Log out?",
+  "btnCancel": "Cancel"
 }

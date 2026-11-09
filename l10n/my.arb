@@ -81,5 +81,7 @@
   "lblChallengeProgress": "{current}/{target}",
   "lblYoureHereNow": "လက်ရှိ ဤအဆင့်တွင် ရှိနေပါသည်",
   "lblPointsToBecomeTier": "{tier} ဖြစ်ရန် {points} မှတ် လိုပါသေးသည်",
-  "lblYoullBeHereSoon": "မကြာမီ ရောက်ရှိပါမည်"
+  "lblYoullBeHereSoon": "မကြာမီ ရောက်ရှိပါမည်",
+  "lblLogOutConfirmTitle": "အကောင့်မှ ထွက်မလား?",
+  "btnCancel": "မလုပ်တော့ပါ"
 }

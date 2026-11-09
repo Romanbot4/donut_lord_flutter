@@ -302,4 +302,10 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get lblYoullBeHereSoon => 'You\'ll be here soon';
+
+  @override
+  String get lblLogOutConfirmTitle => 'Log out?';
+
+  @override
+  String get btnCancel => 'Cancel';
 }

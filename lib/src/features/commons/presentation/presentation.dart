@@ -21,6 +21,7 @@ export 'widgets/styled_otp_field.dart';
 export 'widgets/styled_primary_button.dart';
 export 'widgets/styled_progress_ring.dart';
 export 'widgets/styled_text_field.dart';
+export 'widgets/styled_confirmation_sheet.dart';
 export 'widgets/styled_image.dart';
 export 'widgets/styled_navigation_bar.dart';
 export 'widgets/styled_offline_banner.dart';

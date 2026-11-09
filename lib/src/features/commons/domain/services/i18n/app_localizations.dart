@@ -589,6 +589,18 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'You\'ll be here soon'**
   String get lblYoullBeHereSoon;
+
+  /// No description provided for @lblLogOutConfirmTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Log out?'**
+  String get lblLogOutConfirmTitle;
+
+  /// No description provided for @btnCancel.
+  ///
+  /// In en, this message translates to:
+  /// **'Cancel'**
+  String get btnCancel;
 }
 
 class _AppLocalizationsDelegate
