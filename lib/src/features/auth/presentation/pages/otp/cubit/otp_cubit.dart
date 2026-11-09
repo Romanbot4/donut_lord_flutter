@@ -25,6 +25,7 @@ class OtpCubit extends Cubit<OtpState> {
 
   late String _phoneNumber;
   Timer? _countdown;
+  String? _codeEnteredWhileSending;
 
   Future<void> start(String phoneNumber) {
     _phoneNumber = phoneNumber;
@@ -38,6 +39,10 @@ class OtpCubit extends Cubit<OtpState> {
   }
 
   Future<void> verify(String code) async {
+    if (state.status == OtpStatus.sending && OtpValidator.isComplete(code)) {
+      _codeEnteredWhileSending = code;
+      return;
+    }
     final canVerify =
         state.status == OtpStatus.ready &&
         !state.isLocked &&
@@ -73,6 +78,13 @@ class OtpCubit extends Cubit<OtpState> {
       onFailure: (failure) =>
           emit(state.copyWith(status: OtpStatus.ready, failure: failure)),
     );
+    await _verifyCodeEnteredWhileSending();
+  }
+
+  Future<void> _verifyCodeEnteredWhileSending() async {
+    final code = _codeEnteredWhileSending;
+    _codeEnteredWhileSending = null;
+    if (code != null) await verify(code);
   }
 
   void _onVerifyFailed(Failure failure) {

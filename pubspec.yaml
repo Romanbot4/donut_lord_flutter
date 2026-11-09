@@ -50,6 +50,8 @@ dev_dependencies:
   json_serializable: ^6.15.2
   retrofit_generator: ^10.3.3
   drift_dev: ^2.35.3
+  integration_test:
+    sdk: flutter
 
 flutter:
   uses-material-design: true

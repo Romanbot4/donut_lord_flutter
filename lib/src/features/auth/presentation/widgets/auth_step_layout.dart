@@ -33,9 +33,16 @@ class AuthStepLayout extends StatelessWidget {
               constraints: const BoxConstraints(
                 maxWidth: AppSpacing.formMaxWidth,
               ),
-              child: Padding(
-                padding: const EdgeInsets.all(AppInsets.md),
-                child: _content(context),
+              child: LayoutBuilder(
+                builder: (context, constraints) => SingleChildScrollView(
+                  padding: const EdgeInsets.all(AppInsets.md),
+                  child: ConstrainedBox(
+                    constraints: BoxConstraints(
+                      minHeight: constraints.maxHeight - 2 * AppInsets.md,
+                    ),
+                    child: IntrinsicHeight(child: _content(context)),
+                  ),
+                ),
               ),
               // CustomScrollView(
               //   slivers: [

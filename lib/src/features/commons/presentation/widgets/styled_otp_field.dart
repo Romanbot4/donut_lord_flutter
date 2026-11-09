@@ -42,7 +42,9 @@ class _StyledOtpFieldState extends State<StyledOtpField>
   void didUpdateWidget(StyledOtpField oldWidget) {
     super.didUpdateWidget(oldWidget);
     if (widget.errorCount > oldWidget.errorCount) {
-      _controller.clear();
+      WidgetsBinding.instance.addPostFrameCallback((_) {
+        if (mounted) _controller.clear();
+      });
       if (!MediaQuery.disableAnimationsOf(context)) _shake.forward(from: 0);
     }
   }
@@ -56,27 +58,23 @@ class _StyledOtpFieldState extends State<StyledOtpField>
 
   @override
   Widget build(BuildContext context) {
-    return LayoutBuilder(
-      builder: (context, constraints) {
-        final gaps = (widget.length - 1) * AppSpacing.xs;
-        final boxSize = min(
-          (constraints.maxWidth - gaps) / widget.length,
-          _maxBoxSize,
-        );
-        return AnimatedBuilder(
-          animation: _shake,
-          builder: (context, child) => Transform.translate(
-            offset: Offset(
-              sin(_shake.value * pi * 2 * _shakeTurns) *
-                  _shakeDistance *
-                  (1 - _shake.value),
-              0,
-            ),
-            child: child,
-          ),
-          child: _pinput(context, boxSize),
-        );
-      },
+    final available =
+        min(context.width, AppSpacing.formMaxWidth) - 2 * AppInsets.md;
+    final gaps = (widget.length - 1) * AppSpacing.xs;
+    final boxSize = min((available - gaps) / widget.length, _maxBoxSize);
+
+    return AnimatedBuilder(
+      animation: _shake,
+      builder: (context, child) => Transform.translate(
+        offset: Offset(
+          sin(_shake.value * pi * 2 * _shakeTurns) *
+              _shakeDistance *
+              (1 - _shake.value),
+          0,
+        ),
+        child: child,
+      ),
+      child: _pinput(context, boxSize),
     );
   }
 
