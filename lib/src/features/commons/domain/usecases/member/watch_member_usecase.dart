@@ -1,5 +1,5 @@
 import 'package:injectable/injectable.dart';
-import 'package:jdonuts/src/features/home/domain/domain.dart';
+import 'package:jdonuts/src/features/commons/domain/domain.dart';
 
 @injectable
 class WatchMemberUseCase {

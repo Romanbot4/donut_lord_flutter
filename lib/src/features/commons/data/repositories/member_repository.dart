@@ -1,6 +1,6 @@
 import 'package:injectable/injectable.dart';
-import 'package:jdonuts/src/features/home/data/data.dart';
-import 'package:jdonuts/src/features/home/domain/domain.dart';
+import 'package:jdonuts/src/features/commons/data/data.dart';
+import 'package:jdonuts/src/features/commons/domain/domain.dart';
 
 @LazySingleton(as: IMemberRepository)
 class MemberRepository implements IMemberRepository {

@@ -61,6 +61,7 @@ flutter:
     - assets/images/auth/patterns/
     - assets/images/auth/socials/
     - assets/images/home/
+    - assets/images/tiers/
     - assets/seed/
     - assets/seed/images/
 

@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:jdonuts/src/features/commons/presentation/presentation.dart';
-import 'package:jdonuts/src/features/home/domain/domain.dart';
-import 'package:jdonuts/src/features/home/presentation/presentation.dart';
+import 'package:jdonuts/src/features/commons/domain/domain.dart';
 
 extension MemberTierUi on MemberTier {
   Color get headerColor => switch (this) {
@@ -11,9 +10,9 @@ extension MemberTierUi on MemberTier {
   };
 
   String get badgeAsset => switch (this) {
-    MemberTier.bronze => HomeImages.bronzeBadge,
-    MemberTier.silver => HomeImages.silverBadge,
-    MemberTier.gold => HomeImages.goldBadge,
+    MemberTier.bronze => AppImages.bronzeBadge,
+    MemberTier.silver => AppImages.silverBadge,
+    MemberTier.gold => AppImages.goldBadge,
   };
 
   String label(BuildContext context) => switch (this) {

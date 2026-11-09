@@ -11,6 +11,14 @@ abstract final class AppMotion {
 
   static const shimmer = Duration(milliseconds: 5000);
 
+  static const tierStagger = Duration(milliseconds: 300);
+
+  static const progressFill = Duration(milliseconds: 900);
+
+  static const ringSweep = Duration(milliseconds: 1400);
+
+  static const attentionPulse = Duration(milliseconds: 900);
+
   static const artworkSlideOffset = 0.25;
   static const contentSlideOffset = 0.3;
 

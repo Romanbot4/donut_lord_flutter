@@ -261,4 +261,43 @@ class AppLocalizationsMy extends AppLocalizations {
 
   @override
   String get btnCheckOut => 'ငွေရှင်းမည်';
+
+  @override
+  String get lblJdonutRewards => 'J\' Donuts ဆုလာဘ်များ';
+
+  @override
+  String get lblRewards => 'ဆုလာဘ်များ';
+
+  @override
+  String get lblTotalPoints => 'စုစုပေါင်း အမှတ်';
+
+  @override
+  String get lblEatMoreEarnMore => 'များများစား များများရ';
+
+  @override
+  String get lblGift => 'လက်ဆောင်';
+
+  @override
+  String get btnEarn => 'ရယူမည်';
+
+  @override
+  String lblPointsShort(int points) {
+    return '$points မှတ်';
+  }
+
+  @override
+  String lblChallengeProgress(int current, int target) {
+    return '$current/$target';
+  }
+
+  @override
+  String get lblYoureHereNow => 'လက်ရှိ ဤအဆင့်တွင် ရှိနေပါသည်';
+
+  @override
+  String lblPointsToBecomeTier(String points, String tier) {
+    return '$tier ဖြစ်ရန် $points မှတ် လိုပါသေးသည်';
+  }
+
+  @override
+  String get lblYoullBeHereSoon => 'မကြာမီ ရောက်ရှိပါမည်';
 }

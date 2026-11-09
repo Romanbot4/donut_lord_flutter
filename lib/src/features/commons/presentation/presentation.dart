@@ -10,6 +10,7 @@ export 'extensions/extensions.dart';
 export 'layouts/index_layout.dart';
 export 'pages/tab_placeholder_page.dart';
 export 'resources/app_icons.dart';
+export 'resources/app_images.dart';
 export 'router/router.dart';
 export 'router/stream_listenable.dart';
 export 'services/snack_shower/snack_shower.dart';

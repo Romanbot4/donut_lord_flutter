@@ -523,6 +523,72 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Check Out'**
   String get btnCheckOut;
+
+  /// No description provided for @lblJdonutRewards.
+  ///
+  /// In en, this message translates to:
+  /// **'J\' Donuts Rewards'**
+  String get lblJdonutRewards;
+
+  /// No description provided for @lblRewards.
+  ///
+  /// In en, this message translates to:
+  /// **'Rewards'**
+  String get lblRewards;
+
+  /// No description provided for @lblTotalPoints.
+  ///
+  /// In en, this message translates to:
+  /// **'Total points'**
+  String get lblTotalPoints;
+
+  /// No description provided for @lblEatMoreEarnMore.
+  ///
+  /// In en, this message translates to:
+  /// **'Eat more earn more'**
+  String get lblEatMoreEarnMore;
+
+  /// No description provided for @lblGift.
+  ///
+  /// In en, this message translates to:
+  /// **'Gift'**
+  String get lblGift;
+
+  /// No description provided for @btnEarn.
+  ///
+  /// In en, this message translates to:
+  /// **'Earn'**
+  String get btnEarn;
+
+  /// No description provided for @lblPointsShort.
+  ///
+  /// In en, this message translates to:
+  /// **'{points} pts'**
+  String lblPointsShort(int points);
+
+  /// No description provided for @lblChallengeProgress.
+  ///
+  /// In en, this message translates to:
+  /// **'{current}/{target}'**
+  String lblChallengeProgress(int current, int target);
+
+  /// No description provided for @lblYoureHereNow.
+  ///
+  /// In en, this message translates to:
+  /// **'You\'re here now'**
+  String get lblYoureHereNow;
+
+  /// No description provided for @lblPointsToBecomeTier.
+  ///
+  /// In en, this message translates to:
+  /// **'{points} pts remaining to become {tier}'**
+  String lblPointsToBecomeTier(String points, String tier);
+
+  /// No description provided for @lblYoullBeHereSoon.
+  ///
+  /// In en, this message translates to:
+  /// **'You\'ll be here soon'**
+  String get lblYoullBeHereSoon;
 }
 
 class _AppLocalizationsDelegate

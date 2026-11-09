@@ -36,4 +36,33 @@ void main() {
       await db.close();
     },
   );
+
+  test('upgrading from version 2 creates the challenges table', () async {
+    final db = AppDatabase(
+      NativeDatabase.memory(
+        setup: (raw) => raw.execute('PRAGMA user_version = 2'),
+      ),
+    );
+
+    await db
+        .into(db.challenges)
+        .insert(
+          ChallengesCompanion.insert(
+            id: 'coco-donuts',
+            position: 0,
+            title: 'Eat 4 Coco donuts',
+            current: 4,
+            target: 4,
+            rewardPoints: 100,
+            imageUrl: 'donut.png',
+            imageAspectRatio: 1,
+          ),
+        );
+
+    expect(
+      (await db.select(db.challenges).getSingle()).title,
+      'Eat 4 Coco donuts',
+    );
+    await db.close();
+  });
 }

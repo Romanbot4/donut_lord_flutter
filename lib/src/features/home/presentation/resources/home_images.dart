@@ -9,8 +9,4 @@ abstract final class HomeImages {
     '$_home/shop_bg_mint.svg',
     '$_home/shop_bg_lemon.svg',
   ];
-
-  static const bronzeBadge = '$_home/tier_badge_bronze.svg';
-  static const silverBadge = '$_home/tier_badge_silver.svg';
-  static const goldBadge = '$_home/tier_badge_gold.svg';
 }

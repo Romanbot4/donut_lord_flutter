@@ -16,7 +16,7 @@ class ProductDetailPage extends StatelessWidget {
 
   static const _fadeHeight = 64.0;
   static const _bottomBarClearance = 144.0;
-  static const _leadingWidth = 56.0;
+  static const _leadingWidth = 64.0;
 
   @override
   Widget build(BuildContext context) {
@@ -39,9 +39,8 @@ class ProductDetailPage extends StatelessWidget {
       body: SafeArea(
         bottom: false,
         child: ListView(
-          padding: const EdgeInsets.all(
-            AppInsets.md,
-          ).copyWith(bottom: _bottomBarClearance),
+          padding: const EdgeInsets.all(AppInsets.md)
+              .copyWith(bottom: _bottomBarClearance),
           children: [
             ProductInfoCard(
               code: product?.code ?? preview?.code,

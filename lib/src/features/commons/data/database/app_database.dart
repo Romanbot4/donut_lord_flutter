@@ -72,18 +72,37 @@ class SectionItems extends Table {
   Set<Column> get primaryKey => {sectionId, itemId};
 }
 
-@DriftDatabase(tables: [Members, Shops, MenuSections, MenuItems, SectionItems])
+@DataClassName('ChallengeRow')
+class Challenges extends Table {
+  TextColumn get id => text()();
+  IntColumn get position => integer()();
+  TextColumn get title => text()();
+  IntColumn get current => integer()();
+  IntColumn get target => integer()();
+  IntColumn get rewardPoints => integer()();
+  TextColumn get progressStyle => text().nullable()();
+  TextColumn get imageUrl => text()();
+  RealColumn get imageAspectRatio => real()();
+
+  @override
+  Set<Column> get primaryKey => {id};
+}
+
+@DriftDatabase(
+  tables: [Members, Shops, MenuSections, MenuItems, SectionItems, Challenges],
+)
 class AppDatabase extends _$AppDatabase {
   AppDatabase(super.executor);
 
   @override
-  int get schemaVersion => 2;
+  int get schemaVersion => 3;
 
   @override
   MigrationStrategy get migration => MigrationStrategy(
     onCreate: (migrator) => migrator.createAll(),
     onUpgrade: (migrator, from, to) async {
       if (from < 2) await migrator.addColumn(menuItems, menuItems.description);
+      if (from < 3) await migrator.createTable(challenges);
     },
     beforeOpen: (details) => customStatement('PRAGMA foreign_keys = ON'),
   );

@@ -1,5 +1,5 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:jdonuts/src/features/home/domain/domain.dart';
+import 'package:jdonuts/src/features/commons/domain/domain.dart';
 
 part 'member_model.freezed.dart';
 part 'member_model.g.dart';

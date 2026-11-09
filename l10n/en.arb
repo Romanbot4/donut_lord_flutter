@@ -139,5 +139,43 @@
       }
     }
   },
-  "btnCheckOut": "Check Out"
+  "btnCheckOut": "Check Out",
+  "lblJdonutRewards": "J' Donuts Rewards",
+  "lblRewards": "Rewards",
+  "lblTotalPoints": "Total points",
+  "lblEatMoreEarnMore": "Eat more earn more",
+  "lblGift": "Gift",
+  "btnEarn": "Earn",
+  "lblPointsShort": "{points} pts",
+  "@lblPointsShort": {
+    "placeholders": {
+      "points": {
+        "type": "int"
+      }
+    }
+  },
+  "lblChallengeProgress": "{current}/{target}",
+  "@lblChallengeProgress": {
+    "placeholders": {
+      "current": {
+        "type": "int"
+      },
+      "target": {
+        "type": "int"
+      }
+    }
+  },
+  "lblYoureHereNow": "You're here now",
+  "lblPointsToBecomeTier": "{points} pts remaining to become {tier}",
+  "@lblPointsToBecomeTier": {
+    "placeholders": {
+      "points": {
+        "type": "String"
+      },
+      "tier": {
+        "type": "String"
+      }
+    }
+  },
+  "lblYoullBeHereSoon": "You'll be here soon"
 }

@@ -1,11 +1,8 @@
 export 'entities/home_feed.dart';
-export 'entities/member.dart';
 export 'entities/menu_item.dart';
 export 'entities/menu_section.dart';
 export 'entities/promotion.dart';
 export 'entities/shop.dart';
 export 'repositories/home_repository.dart';
-export 'repositories/member_repository.dart';
 export 'usecases/refresh_home_feed_usecase.dart';
 export 'usecases/watch_home_feed_usecase.dart';
-export 'usecases/watch_member_usecase.dart';

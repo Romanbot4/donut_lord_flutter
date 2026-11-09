@@ -1,0 +1,34 @@
+{
+  "challenges": [
+    {
+      "id": "coco-donuts",
+      "title": "Eat 4 Coco donuts",
+      "current": 4,
+      "target": 4,
+      "rewardPoints": 100,
+      "progressStyle": "donut",
+      "imageUrl": "assets/seed/images/rewards_donut.png",
+      "imageAspectRatio": 1
+    },
+    {
+      "id": "strawberry-donuts",
+      "title": "Eat 4 Strawberry donuts",
+      "current": 1,
+      "target": 4,
+      "rewardPoints": 100,
+      "progressStyle": "donut",
+      "imageUrl": "assets/seed/images/rewards_donut.png",
+      "imageAspectRatio": 1
+    },
+    {
+      "id": "americano",
+      "title": "Drink 12 cups americano",
+      "current": 9,
+      "target": 12,
+      "rewardPoints": 100,
+      "progressStyle": "arc",
+      "imageUrl": "assets/seed/images/rewards_coffee.png",
+      "imageAspectRatio": 1
+    }
+  ]
+}

@@ -263,4 +263,43 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get btnCheckOut => 'Check Out';
+
+  @override
+  String get lblJdonutRewards => 'J\' Donuts Rewards';
+
+  @override
+  String get lblRewards => 'Rewards';
+
+  @override
+  String get lblTotalPoints => 'Total points';
+
+  @override
+  String get lblEatMoreEarnMore => 'Eat more earn more';
+
+  @override
+  String get lblGift => 'Gift';
+
+  @override
+  String get btnEarn => 'Earn';
+
+  @override
+  String lblPointsShort(int points) {
+    return '$points pts';
+  }
+
+  @override
+  String lblChallengeProgress(int current, int target) {
+    return '$current/$target';
+  }
+
+  @override
+  String get lblYoureHereNow => 'You\'re here now';
+
+  @override
+  String lblPointsToBecomeTier(String points, String tier) {
+    return '$points pts remaining to become $tier';
+  }
+
+  @override
+  String get lblYoullBeHereSoon => 'You\'ll be here soon';
 }

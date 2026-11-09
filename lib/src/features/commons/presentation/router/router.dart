@@ -11,6 +11,7 @@ import 'package:jdonuts/src/features/commons/presentation/presentation.dart';
 import 'package:jdonuts/src/features/home/presentation/presentation.dart';
 import 'package:jdonuts/src/features/product/domain/domain.dart';
 import 'package:jdonuts/src/features/product/presentation/presentation.dart';
+import 'package:jdonuts/src/features/rewards/presentation/presentation.dart';
 import 'package:jdonuts/src/features/settings/presentation/presentation.dart';
 
 @Injectable(as: IAppRouter)
@@ -35,13 +36,12 @@ final class AppRouter implements IAppRouter {
 
   late final _sessionChanges = StreamListenable(_session.stream);
 
-  static const _rewardsPath = "/rewards";
   static const _orderPath = "/order";
   static const _walletPath = "/wallet";
 
   static const _tabPaths = [
     HomePage.routePath,
-    _rewardsPath,
+    RewardsPage.routePath,
     _orderPath,
     _walletPath,
     SettingsPage.routePath,
@@ -97,11 +97,7 @@ final class AppRouter implements IAppRouter {
         },
         routes: [
           _tabRoute(HomePage.routePath, (_) => const HomePage()),
-          _tabRoute(
-            _rewardsPath,
-            (context) =>
-                TabPlaceholderPage(title: context.localizations.lblReward),
-          ),
+          _tabRoute(RewardsPage.routePath, (_) => const RewardsPage()),
           _tabRoute(
             _orderPath,
             (context) =>

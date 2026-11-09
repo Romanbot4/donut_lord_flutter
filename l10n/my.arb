@@ -70,5 +70,16 @@
   "lblDecreaseQuantity": "အရေအတွက် လျှော့ရန်",
   "lblIncreaseQuantity": "အရေအတွက် တိုးရန်",
   "lblCartItems": "{count, plural, other{ပစ္စည်း {count} ခု}}",
-  "btnCheckOut": "ငွေရှင်းမည်"
+  "btnCheckOut": "ငွေရှင်းမည်",
+  "lblJdonutRewards": "J' Donuts ဆုလာဘ်များ",
+  "lblRewards": "ဆုလာဘ်များ",
+  "lblTotalPoints": "စုစုပေါင်း အမှတ်",
+  "lblEatMoreEarnMore": "များများစား များများရ",
+  "lblGift": "လက်ဆောင်",
+  "btnEarn": "ရယူမည်",
+  "lblPointsShort": "{points} မှတ်",
+  "lblChallengeProgress": "{current}/{target}",
+  "lblYoureHereNow": "လက်ရှိ ဤအဆင့်တွင် ရှိနေပါသည်",
+  "lblPointsToBecomeTier": "{tier} ဖြစ်ရန် {points} မှတ် လိုပါသေးသည်",
+  "lblYoullBeHereSoon": "မကြာမီ ရောက်ရှိပါမည်"
 }

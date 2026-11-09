@@ -7,6 +7,5 @@ export 'widgets/home_notification_bell.dart';
 export 'widgets/home_shop_card.dart';
 export 'widgets/home_shop_list.dart';
 export 'widgets/home_sliver_app_bar.dart';
-export 'widgets/member_tier_ui.dart';
 export 'widgets/menu_item_card.dart';
 export 'widgets/promotion_badge.dart';

@@ -51,6 +51,7 @@ class _StyledPrimaryButtonState extends State<StyledPrimaryButton> {
         child: AnimatedContainer(
           duration: AppMotion.fast,
           height: _height,
+          padding: const EdgeInsets.symmetric(horizontal: AppInsets.md),
           alignment: Alignment.center,
           decoration: BoxDecoration(
             color: background,

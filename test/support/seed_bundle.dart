@@ -2,6 +2,7 @@ import 'dart:convert';
 
 import 'package:flutter/services.dart';
 import 'package:jdonuts/src/features/home/data/data.dart';
+import 'package:jdonuts/src/features/rewards/data/data.dart';
 
 const seedFeed = {
   'shops': [
@@ -30,12 +31,26 @@ const seedDescriptions = [
   {'id': 'coconut', 'description': 'Soft and sweet'},
 ];
 
+const seedChallenges = {
+  'challenges': [
+    {
+      'id': 'coco-donuts',
+      'title': 'Eat 4 Coco donuts',
+      'current': 4,
+      'target': 4,
+      'rewardPoints': 100,
+      'progressStyle': 'donut',
+      'imageUrl': 'assets/seed/images/rewards_donut.png',
+    },
+  ],
+};
+
 class SeedBundle extends AssetBundle {
-  String _seedFor(String key) => jsonEncode(
-    key == HomeLocalDataSource.descriptionsSeedAsset
-        ? seedDescriptions
-        : seedFeed,
-  );
+  String _seedFor(String key) => jsonEncode(switch (key) {
+    HomeLocalDataSource.descriptionsSeedAsset => seedDescriptions,
+    RewardsLocalDataSource.seedAsset => seedChallenges,
+    _ => seedFeed,
+  });
 
   @override
   Future<ByteData> load(String key) async =>
