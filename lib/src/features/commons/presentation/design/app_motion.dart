@@ -11,6 +11,8 @@ abstract final class AppMotion {
 
   static const shimmer = Duration(milliseconds: 5000);
 
+  static const bannerInterval = Duration(seconds: 4);
+
   static const tierStagger = Duration(milliseconds: 300);
 
   static const progressFill = Duration(milliseconds: 900);
