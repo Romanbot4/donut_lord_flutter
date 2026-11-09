@@ -11,7 +11,7 @@ abstract final class AuthConfig {
 
   static const fakeStepDelay = Duration(seconds: 1);
 
-  static const fakeOtpCode = '000000';
+  static const fakeOtpCode = '123456';
 }
 
 const remoteAuth = Environment(AuthConfig.remote);
