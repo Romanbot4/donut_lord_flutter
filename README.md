@@ -8,6 +8,23 @@ It's also built as a reusable starter, with flavors, dependency injection,
 networking, local storage, localization (English and Myanmar), routing and a
 light/dark theme already wired up.
 
+## For reviewers
+
+```sh
+flutter pub get
+flutter gen-l10n
+dart run build_runner build
+flutter run
+```
+
+- **No flags needed:** `flutter run` uses the **`prod`** flavor by default.
+- **Data:** Home, Product detail and Rewards load live data from the hosted mock
+  API (`https://jdonuts-mock.netlify.app/api`), with the bundled seed data as the
+  offline fallback.
+- **Sign-in:** uses the **on-device fake** backend, so registering and logging
+  in work with no server and in airplane mode.
+- **OTP code:** **`123456`**.
+
 ## Requirements
 
 - Flutter **3.47.9** (stable), Dart **3.13.7**
@@ -45,7 +62,8 @@ dart run build_runner watch
 
 ## Running the app
 
-There are two flavors, and you always have to pick one:
+There are two flavors. **`prod` is the default**, so `flutter run` and
+`flutter build` without `--flavor` use it.
 
 | Flavor | App name    | Bundle / application id    | API                           |
 | ------ | ----------- | -------------------------- | ----------------------------- |
@@ -61,12 +79,23 @@ Builds:
 
 ```sh
 flutter build apk --release --flavor prod
-flutter build ios --simulator --flavor uat
+flutter build ios --simulator --flavor prod
 flutter build ipa --flavor prod
 ```
 
 Both flavors can be installed on the same device side by side. Only `uat` is
 allowed to use plain HTTP, so it can reach the mock server on your local network.
+
+> If a release build stops with
+> `package dev.flutter.plugins.integration_test does not exist`,
+> clean first:
+>
+> ```sh
+> flutter clean && flutter pub get && dart run build_runner build
+> ```
+>
+> The integration test run leaves a generated `GeneratedPluginRegistrant.java`
+> that registers the `integration_test` plugin. It's a know issue but just in case.
 
 ### Fake OTP code
 
@@ -88,6 +117,11 @@ flutter run --flavor uat --dart-define=AUTH_BACKEND=remote
 Home, Product detail and Rewards refresh from the mock server's versioned
 `/v1/...` endpoints, which return a `{data, error, meta}` envelope. The server is
 optional. Without it the app shows the bundled seed data and stays usable.
+
+- **`prod`** uses the hosted mock API at `https://jdonuts-mock.netlify.app/api`
+  (a Netlify Function, with images on Netlify's CDN).
+- **`uat`** uses the same server run locally (`npm start` or Docker on port 3000,
+  `NetworkConfig.stagingDomain`).
 
 ## Project structure
 
@@ -242,7 +276,20 @@ flutter test integration_test --flavor uat
 - **Widget tests:** login and registration validation (phone, OTP wrong code
   and lock, name, date of birth).
 - **Integration test:** Register > Home > Product detail, on a simulator or
-  device, using the fake auth backend.
+  device, using the fake auth backend. It clears the app's saved session and
+  local preferences before it starts.
+
+**After running the integration test, clean before a release build.** The run
+regenerates `GeneratedPluginRegistrant.java` with the `integration_test` plugin.
+That plugin is a dev dependency, which release builds leave out, so
+`flutter run --release` / `flutter build apk --release` then fail with
+`package dev.flutter.plugins.integration_test does not exist`. Run:
+
+```sh
+flutter clean && flutter pub get && dart run build_runner build
+```
+
+The file is generated and gitignored, so nothing needs committing.
 
 ## Conventions
 

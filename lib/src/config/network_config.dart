@@ -1,9 +1,9 @@
 abstract class NetworkConfig {
-  static const prodDomain = "https://kyawpyaephyo.dev/api";
+  static const prodDomain = "https://jdonuts-mock.netlify.app/api";
 
   static const authStepMinimumDuration = Duration(seconds: 1);
 
-  static const stagingDomain = "http://192.168.18.39:3000/api";
+  static const stagingDomain = "https://jdonuts-mock.netlify.app/api";
 
   static const Map<String, String> defaultHeaders = {
     'Accept': 'application/json',
